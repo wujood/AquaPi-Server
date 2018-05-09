@@ -1,0 +1,175 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "REST API for the AquaPi",
+    "version": "1.0.0",
+    "title": "AquaPi Swagger API"
+  },
+  "basePath": "/api",
+  "host": "localhost:8080",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+	  "/ComponentSettings": {
+      "post": {
+        "tags":["Post", "ComponentSettings"],
+        "summary":"Returns the current component settings",
+        "description":"Returns the current component settings",
+        "operationId":"postComponentSettings",
+        "produces":[
+          "application/json"
+        ],
+        "responses":
+        {
+          "200":
+          {
+            "description": "successful operation",
+            "schema":
+            {
+              "$ref": "#/definitions/ComponentSettings"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags":["Put", "ComponentSettings"],
+        "summary":"Sets a new component settings",
+        "description":"Sets a new component settings",
+        "operationId":"putComponentSettings",
+        "consumes": [
+          "application/json"
+        ],
+        "produces":[
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ComponentSettings"
+            }
+          }
+        ],
+        "responses":
+        {
+          "200":
+          {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+  },
+  "definitions": {
+    "ComponentSettings": {
+      "description": "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.",
+      "type": "object",
+      "properties": {
+        "PiId": {
+          "type": "string",
+          "example": "abc123"
+        },
+        "Timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2017-07-21T17:32:28Z"
+        },
+        "WaterFlowSensor": {
+          "$ref": "#/definitions/WaterFlowSensor"
+        },
+        "LightSensor": {
+          "$ref": "#/definitions/LightSensor"
+        },
+        "WaterLevelSensor": {
+          "$ref": "#/definitions/WaterLevelSensor"
+        },
+        "Thermometer": {
+          "$ref": "#/definitions/Thermometer"
+        },
+        "Lamp": {
+          "$ref": "#/definitions/Lamp"
+        },
+        "Feeder": {
+          "$ref": "#/definitions/Feeder"
+        },
+        "Pump": {
+          "$ref": "#/definitions/Pump"
+        }
+      }
+    },
+  	"WaterFlowSensor": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"LightSensor": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"WaterLevelSensor": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"Thermometer": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"Lamp": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"Feeder": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	},
+  	"Pump": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "format": "float",
+            "example": "0.5"
+          }
+        }
+  	}
+  }
+}
