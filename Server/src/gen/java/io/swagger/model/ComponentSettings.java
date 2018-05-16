@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
  * Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.
  */
 @ApiModel(description = "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-09T13:36:25.501Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-16T13:49:43.582+02:00")
 public class ComponentSettings   {
   @JsonProperty("PiId")
   private String piId = null;
@@ -66,10 +66,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get piId
    * @return piId
-   **/
+  **/
   @JsonProperty("PiId")
   @ApiModelProperty(example = "abc123", value = "")
   public String getPiId() {
@@ -85,10 +85,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get timestamp
    * @return timestamp
-   **/
+  **/
   @JsonProperty("Timestamp")
   @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "")
   public Date getTimestamp() {
@@ -104,10 +104,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get waterFlowSensor
    * @return waterFlowSensor
-   **/
+  **/
   @JsonProperty("WaterFlowSensor")
   @ApiModelProperty(value = "")
   public WaterFlowSensor getWaterFlowSensor() {
@@ -123,10 +123,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get lightSensor
    * @return lightSensor
-   **/
+  **/
   @JsonProperty("LightSensor")
   @ApiModelProperty(value = "")
   public LightSensor getLightSensor() {
@@ -142,10 +142,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get waterLevelSensor
    * @return waterLevelSensor
-   **/
+  **/
   @JsonProperty("WaterLevelSensor")
   @ApiModelProperty(value = "")
   public WaterLevelSensor getWaterLevelSensor() {
@@ -161,10 +161,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get thermometer
    * @return thermometer
-   **/
+  **/
   @JsonProperty("Thermometer")
   @ApiModelProperty(value = "")
   public Thermometer getThermometer() {
@@ -180,10 +180,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get lamp
    * @return lamp
-   **/
+  **/
   @JsonProperty("Lamp")
   @ApiModelProperty(value = "")
   public Lamp getLamp() {
@@ -199,10 +199,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get feeder
    * @return feeder
-   **/
+  **/
   @JsonProperty("Feeder")
   @ApiModelProperty(value = "")
   public Feeder getFeeder() {
@@ -218,10 +218,10 @@ public class ComponentSettings   {
     return this;
   }
 
-  /**
+   /**
    * Get pump
    * @return pump
-   **/
+  **/
   @JsonProperty("Pump")
   @ApiModelProperty(value = "")
   public Pump getPump() {

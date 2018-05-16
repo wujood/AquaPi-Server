@@ -6,9 +6,15 @@
     "title": "AquaPi Swagger API"
   },
   "basePath": "/api",
-  "host": "localhost:8080",
+  "host": "localhost:16080",
   "schemes": [
     "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
   ],
   "paths": {
 	  "/ComponentSettings": {

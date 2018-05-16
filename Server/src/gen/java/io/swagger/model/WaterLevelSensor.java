@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * WaterLevelSensor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-09T13:36:25.501Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-16T13:49:43.582+02:00")
 public class WaterLevelSensor   {
   @JsonProperty("value")
   private Float value = null;
@@ -33,10 +33,10 @@ public class WaterLevelSensor   {
     return this;
   }
 
-  /**
+   /**
    * Get value
    * @return value
-   **/
+  **/
   @JsonProperty("value")
   @ApiModelProperty(example = "0.5", value = "")
   public Float getValue() {
