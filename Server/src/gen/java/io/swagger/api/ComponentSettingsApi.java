@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the ComponentSettings API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-16T13:49:43.582+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T07:41:23.957+02:00")
 public class ComponentSettingsApi  {
    private final ComponentSettingsApiService delegate = ComponentSettingsApiServiceFactory.getComponentSettingsApi();
 

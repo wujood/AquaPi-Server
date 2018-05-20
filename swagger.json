@@ -75,34 +75,34 @@
       "description": "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.",
       "type": "object",
       "properties": {
-        "PiId": {
+        "piid": {
           "type": "string",
           "example": "abc123"
         },
-        "Timestamp": {
+        "timestamp": {
           "type": "string",
           "format": "date-time",
           "example": "2017-07-21T17:32:28Z"
         },
-        "WaterFlowSensor": {
+        "waterflowsensor": {
           "$ref": "#/definitions/WaterFlowSensor"
         },
-        "LightSensor": {
+        "lightsensor": {
           "$ref": "#/definitions/LightSensor"
         },
-        "WaterLevelSensor": {
+        "waterlevelsensor": {
           "$ref": "#/definitions/WaterLevelSensor"
         },
-        "Thermometer": {
+        "thermometer": {
           "$ref": "#/definitions/Thermometer"
         },
-        "Lamp": {
+        "lamp": {
           "$ref": "#/definitions/Lamp"
         },
-        "Feeder": {
+        "feeder": {
           "$ref": "#/definitions/Feeder"
         },
-        "Pump": {
+        "pump": {
           "$ref": "#/definitions/Pump"
         }
       }

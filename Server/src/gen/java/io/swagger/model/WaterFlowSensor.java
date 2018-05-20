@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * WaterFlowSensor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-16T13:49:43.582+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T07:41:23.957+02:00")
 public class WaterFlowSensor   {
   @JsonProperty("value")
   private Float value = null;
