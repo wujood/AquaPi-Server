@@ -11,6 +11,7 @@ import io.swagger.api.NotFoundException;
 import java.io.InputStream;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import uc.aquapi.eu.MockupDevelopmentServer;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
@@ -48,8 +49,11 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
 
         return Response.ok().entity(testInput).build();
 
+        //return Response.ok().entity(MockupDevelopmentServer.getValues()).build();
+
         // do some magic!
         //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
+
     }
     @Override
     public Response putComponentSettings(ComponentSettings request, SecurityContext securityContext) throws NotFoundException {

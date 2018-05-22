@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * Feeder
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T08:07:13.780Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T07:41:23.957+02:00")
 public class Feeder   {
   @JsonProperty("value")
   private Float value = null;
