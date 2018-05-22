@@ -18,7 +18,7 @@ public class WaterFlowSensor {
     public static WaterFlowSensor fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         WaterFlowSensor result = new WaterFlowSensor();
-        result.setValue(compSettings.getWaterFlowSensor().getValue());
+        result.setValue(compSettings.getWaterflowsensor().getValue());
         return result;
     }
 

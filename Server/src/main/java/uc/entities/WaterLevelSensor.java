@@ -18,7 +18,7 @@ public class WaterLevelSensor {
     public static WaterLevelSensor fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         WaterLevelSensor result = new WaterLevelSensor();
-        result.setValue(compSettings.getWaterLevelSensor().getValue());
+        result.setValue(compSettings.getWaterlevelsensor().getValue());
         return result;
     }
 

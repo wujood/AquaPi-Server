@@ -10,6 +10,7 @@ io/swagger/api/ApiOriginFilter.class
 io/swagger/model/LightSensor.class
 uc/dataaccess/ComponentSettingsDAO.class
 io/swagger/model/Feeder.class
+uc/aquapi/eu/MockupDevelopmentServer.class
 uc/dataaccess/DAOBase.class
 io/swagger/model/Thermometer.class
 io/swagger/api/impl/ComponentSettingsApiServiceImpl.class

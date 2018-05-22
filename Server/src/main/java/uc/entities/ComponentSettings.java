@@ -45,7 +45,7 @@ public class ComponentSettings {
     public static ComponentSettings fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         ComponentSettings result = new ComponentSettings();
-        result.setPiId(compSettings.getPiId());
+        result.setPiId(compSettings.getPiid());
         result.setTimestamp(compSettings.getTimestamp());
 
         result.setWaterFlowSensor(uc.entities.WaterFlowSensor.fromSwaggerObject(compSettings));
@@ -61,11 +61,11 @@ public class ComponentSettings {
 
     public io.swagger.model.ComponentSettings toSwaggerObject() {
         io.swagger.model.ComponentSettings result = new io.swagger.model.ComponentSettings();
-        result.setPiId(getPiId());
+        result.setPiid(getPiId());
         result.setTimestamp(getTimestamp());
-        result.setWaterFlowSensor(getWaterFlowSensor().toSwaggerObject());
-        result.setLightSensor(getLightSensor().toSwaggerObject());
-        result.setWaterLevelSensor(getWaterLevelSensor().toSwaggerObject());
+        result.setWaterflowsensor(getWaterFlowSensor().toSwaggerObject());
+        result.setLightsensor(getLightSensor().toSwaggerObject());
+        result.setWaterlevelsensor(getWaterLevelSensor().toSwaggerObject());
         result.setThermometer(getThermometer().toSwaggerObject());
         result.setLamp(getLamp().toSwaggerObject());
         result.setFeeder(getFeeder().toSwaggerObject());

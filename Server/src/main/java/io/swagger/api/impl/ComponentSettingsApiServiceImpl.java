@@ -32,7 +32,7 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
         testInput = new io.swagger.model.ComponentSettings();
         io.swagger.model.Lamp lamp = new io.swagger.model.Lamp();
         lamp.setValue(0.5F);
-        testInput.setPiId("TEST!");
+        testInput.setPiid("TEST!");
         testInput.setLamp(lamp);
     }
 

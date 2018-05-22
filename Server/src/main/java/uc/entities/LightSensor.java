@@ -18,7 +18,7 @@ public class LightSensor {
     public static LightSensor fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         LightSensor result = new LightSensor();
-        result.setValue(compSettings.getLightSensor().getValue());
+        result.setValue(compSettings.getLightsensor().getValue());
         return result;
     }
 
