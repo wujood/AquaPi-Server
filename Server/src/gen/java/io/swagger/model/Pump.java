@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * Pump
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-16T13:49:43.582+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T08:07:13.780Z")
 public class Pump   {
   @JsonProperty("value")
   private Float value = null;
@@ -33,10 +33,10 @@ public class Pump   {
     return this;
   }
 
-   /**
+  /**
    * Get value
    * @return value
-  **/
+   **/
   @JsonProperty("value")
   @ApiModelProperty(example = "0.5", value = "")
   public Float getValue() {
