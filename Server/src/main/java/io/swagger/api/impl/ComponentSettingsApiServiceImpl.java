@@ -34,7 +34,7 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
         testInput = new ComponentSettings();
         Lamp lamp = new Lamp();
         lamp.setValue(0.5F);
-        testInput.setPiid("TEST!");
+        testInput.setPiid("Fibonacci");
         testInput.setLamp(lamp);
     }
 
