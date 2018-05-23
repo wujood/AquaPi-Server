@@ -5,11 +5,13 @@ import io.swagger.model.*;
 
 import io.swagger.model.ComponentSettings;
 
+import java.util.Date;
 import java.util.List;
 import io.swagger.api.NotFoundException;
 
 import java.io.InputStream;
 
+import io.swagger.model.Lamp;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import uc.aquapi.eu.MockupDevelopmentServer;
 
@@ -29,8 +31,8 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
 
         componentSettingsLogic = new ComponentSettingsLogic();
 
-        testInput = new io.swagger.model.ComponentSettings();
-        io.swagger.model.Lamp lamp = new io.swagger.model.Lamp();
+        testInput = new ComponentSettings();
+        Lamp lamp = new Lamp();
         lamp.setValue(0.5F);
         testInput.setPiid("TEST!");
         testInput.setLamp(lamp);
@@ -47,6 +49,7 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
 
         return Response.ok().entity(mapEntitiesToSwaggerObject(bllResult.getResult())).build();*/
 
+        testInput.setTimestamp(new Date());
         return Response.ok().entity(testInput).build();
 
         //return Response.ok().entity(MockupDevelopmentServer.getValues()).build();
