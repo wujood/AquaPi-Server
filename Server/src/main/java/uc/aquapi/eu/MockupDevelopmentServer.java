@@ -23,7 +23,7 @@ public class MockupDevelopmentServer {
         // Thermometer
         Thermometer t = new Thermometer();
         t.setValue((float) (Math.random() * 10f));
-        result.setThermometer(t);
+        result.setWaterthermometer(t);
 
         return result;
     }

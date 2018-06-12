@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public abstract class DAOBase {
 
     protected Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/aquapi?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "admin", "admin");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/aquapi?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true", "admin", "admin");
     }
 
 }

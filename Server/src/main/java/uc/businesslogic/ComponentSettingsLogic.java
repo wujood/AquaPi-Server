@@ -29,12 +29,10 @@ public class ComponentSettingsLogic extends LogicBase {
 
     public OperationResult<ComponentSettings> putComponentSettings(ComponentSettings componentSettings) {
         OperationResult<ComponentSettings> result = new OperationResult<>();
-        System.out.println("INPUT PIID:");
-        System.out.println(componentSettings.getPiId());
 
         try {
             // insert to database
-            result.setResult(componentSettings);
+            result.setResult(dao.putComponentSettings(componentSettings));
             result.setSucceeded(true);
         } catch (Exception ex) {
             handleException(result, ex);

@@ -21,14 +21,14 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 
 /**
- * Thermometer
+ * AirThermometer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
-public class Thermometer   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T16:04:09.799Z")
+public class AirThermometer   {
   @JsonProperty("value")
   private Float value = null;
 
-  public Thermometer value(Float value) {
+  public AirThermometer value(Float value) {
     this.value = value;
     return this;
   }
@@ -56,8 +56,8 @@ public class Thermometer   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Thermometer thermometer = (Thermometer) o;
-    return Objects.equals(this.value, thermometer.value);
+    AirThermometer airThermometer = (AirThermometer) o;
+    return Objects.equals(this.value, airThermometer.value);
   }
 
   @Override
@@ -69,7 +69,7 @@ public class Thermometer   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Thermometer {\n");
+    sb.append("class AirThermometer {\n");
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");

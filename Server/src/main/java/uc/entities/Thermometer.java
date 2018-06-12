@@ -15,13 +15,6 @@ public class Thermometer {
         this.value = value;
     }
 
-    public static Thermometer fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
-    {
-        Thermometer result = new Thermometer();
-        result.setValue(compSettings.getThermometer().getValue());
-        return result;
-    }
-
     public static Thermometer fromSwaggerObject(io.swagger.model.Thermometer swagThermometer)
     {
         Thermometer result = new Thermometer();

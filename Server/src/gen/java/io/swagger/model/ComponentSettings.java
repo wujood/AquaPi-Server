@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
  * Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.
  */
 @ApiModel(description = "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T07:41:23.957+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
 public class ComponentSettings   {
   @JsonProperty("piid")
   private String piid = null;
@@ -49,8 +49,11 @@ public class ComponentSettings   {
   @JsonProperty("waterlevelsensor")
   private WaterLevelSensor waterlevelsensor = null;
 
-  @JsonProperty("thermometer")
-  private Thermometer thermometer = null;
+  @JsonProperty("waterthermometer")
+  private Thermometer waterthermometer = null;
+
+  @JsonProperty("airthermometer")
+  private Thermometer airthermometer = null;
 
   @JsonProperty("lamp")
   private Lamp lamp = null;
@@ -66,12 +69,13 @@ public class ComponentSettings   {
     return this;
   }
 
-   /**
+  /**
    * Get piid
    * @return piid
-  **/
+   **/
   @JsonProperty("piid")
-  @ApiModelProperty(example = "abc123", value = "")
+  @ApiModelProperty(example = "abc123", required = true, value = "")
+  @NotNull
   public String getPiid() {
     return piid;
   }
@@ -88,7 +92,7 @@ public class ComponentSettings   {
   /**
    * Get timestamp
    * @return timestamp
-  **/
+   **/
   @JsonProperty("timestamp")
   @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "")
   public Date getTimestamp() {
@@ -104,10 +108,10 @@ public class ComponentSettings   {
     return this;
   }
 
-   /**
+  /**
    * Get waterflowsensor
    * @return waterflowsensor
-  **/
+   **/
   @JsonProperty("waterflowsensor")
   @ApiModelProperty(value = "")
   public WaterFlowSensor getWaterflowsensor() {
@@ -123,10 +127,10 @@ public class ComponentSettings   {
     return this;
   }
 
-   /**
+  /**
    * Get lightsensor
    * @return lightsensor
-  **/
+   **/
   @JsonProperty("lightsensor")
   @ApiModelProperty(value = "")
   public LightSensor getLightsensor() {
@@ -142,10 +146,10 @@ public class ComponentSettings   {
     return this;
   }
 
-   /**
+  /**
    * Get waterlevelsensor
    * @return waterlevelsensor
-  **/
+   **/
   @JsonProperty("waterlevelsensor")
   @ApiModelProperty(value = "")
   public WaterLevelSensor getWaterlevelsensor() {
@@ -156,23 +160,42 @@ public class ComponentSettings   {
     this.waterlevelsensor = waterlevelsensor;
   }
 
-  public ComponentSettings thermometer(Thermometer thermometer) {
-    this.thermometer = thermometer;
+  public ComponentSettings waterthermometer(Thermometer waterthermometer) {
+    this.waterthermometer = waterthermometer;
     return this;
   }
 
   /**
-   * Get thermometer
-   * @return thermometer
-  **/
-  @JsonProperty("thermometer")
+   * Get waterthermometer
+   * @return waterthermometer
+   **/
+  @JsonProperty("waterthermometer")
   @ApiModelProperty(value = "")
-  public Thermometer getThermometer() {
-    return thermometer;
+  public Thermometer getWaterthermometer() {
+    return waterthermometer;
   }
 
-  public void setThermometer(Thermometer thermometer) {
-    this.thermometer = thermometer;
+  public void setWaterthermometer(Thermometer waterthermometer) {
+    this.waterthermometer = waterthermometer;
+  }
+
+  public ComponentSettings airthermometer(Thermometer airthermometer) {
+    this.airthermometer = airthermometer;
+    return this;
+  }
+
+  /**
+   * Get airthermometer
+   * @return airthermometer
+   **/
+  @JsonProperty("airthermometer")
+  @ApiModelProperty(value = "")
+  public Thermometer getAirthermometer() {
+    return airthermometer;
+  }
+
+  public void setAirthermometer(Thermometer airthermometer) {
+    this.airthermometer = airthermometer;
   }
 
   public ComponentSettings lamp(Lamp lamp) {
@@ -183,7 +206,7 @@ public class ComponentSettings   {
   /**
    * Get lamp
    * @return lamp
-  **/
+   **/
   @JsonProperty("lamp")
   @ApiModelProperty(value = "")
   public Lamp getLamp() {
@@ -202,7 +225,7 @@ public class ComponentSettings   {
   /**
    * Get feeder
    * @return feeder
-  **/
+   **/
   @JsonProperty("feeder")
   @ApiModelProperty(value = "")
   public Feeder getFeeder() {
@@ -221,7 +244,7 @@ public class ComponentSettings   {
   /**
    * Get pump
    * @return pump
-  **/
+   **/
   @JsonProperty("pump")
   @ApiModelProperty(value = "")
   public Pump getPump() {
@@ -247,7 +270,8 @@ public class ComponentSettings   {
         Objects.equals(this.waterflowsensor, componentSettings.waterflowsensor) &&
         Objects.equals(this.lightsensor, componentSettings.lightsensor) &&
         Objects.equals(this.waterlevelsensor, componentSettings.waterlevelsensor) &&
-        Objects.equals(this.thermometer, componentSettings.thermometer) &&
+        Objects.equals(this.waterthermometer, componentSettings.waterthermometer) &&
+        Objects.equals(this.airthermometer, componentSettings.airthermometer) &&
         Objects.equals(this.lamp, componentSettings.lamp) &&
         Objects.equals(this.feeder, componentSettings.feeder) &&
         Objects.equals(this.pump, componentSettings.pump);
@@ -255,7 +279,7 @@ public class ComponentSettings   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(piid, timestamp, waterflowsensor, lightsensor, waterlevelsensor, thermometer, lamp, feeder, pump);
+    return Objects.hash(piid, timestamp, waterflowsensor, lightsensor, waterlevelsensor, waterthermometer, airthermometer, lamp, feeder, pump);
   }
 
 
@@ -269,7 +293,8 @@ public class ComponentSettings   {
     sb.append("    waterflowsensor: ").append(toIndentedString(waterflowsensor)).append("\n");
     sb.append("    lightsensor: ").append(toIndentedString(lightsensor)).append("\n");
     sb.append("    waterlevelsensor: ").append(toIndentedString(waterlevelsensor)).append("\n");
-    sb.append("    thermometer: ").append(toIndentedString(thermometer)).append("\n");
+    sb.append("    waterthermometer: ").append(toIndentedString(waterthermometer)).append("\n");
+    sb.append("    airthermometer: ").append(toIndentedString(airthermometer)).append("\n");
     sb.append("    lamp: ").append(toIndentedString(lamp)).append("\n");
     sb.append("    feeder: ").append(toIndentedString(feeder)).append("\n");
     sb.append("    pump: ").append(toIndentedString(pump)).append("\n");

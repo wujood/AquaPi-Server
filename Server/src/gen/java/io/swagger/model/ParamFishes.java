@@ -21,30 +21,30 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 
 /**
- * Thermometer
+ * ParamFishes
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
-public class Thermometer   {
-  @JsonProperty("value")
-  private Float value = null;
+public class ParamFishes   {
+  @JsonProperty("piid")
+  private String piid = null;
 
-  public Thermometer value(Float value) {
-    this.value = value;
+  public ParamFishes piid(String piid) {
+    this.piid = piid;
     return this;
   }
 
   /**
-   * Get value
-   * @return value
+   * Get piid
+   * @return piid
    **/
-  @JsonProperty("value")
-  @ApiModelProperty(example = "22.5", value = "")
-  public Float getValue() {
-    return value;
+  @JsonProperty("piid")
+  @ApiModelProperty(value = "")
+  public String getPiid() {
+    return piid;
   }
 
-  public void setValue(Float value) {
-    this.value = value;
+  public void setPiid(String piid) {
+    this.piid = piid;
   }
 
 
@@ -56,22 +56,22 @@ public class Thermometer   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Thermometer thermometer = (Thermometer) o;
-    return Objects.equals(this.value, thermometer.value);
+    ParamFishes paramFishes = (ParamFishes) o;
+    return Objects.equals(this.piid, paramFishes.piid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hash(piid);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Thermometer {\n");
+    sb.append("class ParamFishes {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    piid: ").append(toIndentedString(piid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

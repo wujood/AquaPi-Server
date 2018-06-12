@@ -17,36 +17,44 @@
     "application/json"
   ],
   "paths": {
-	  "/ComponentSettings": {
+    "/ComponentSettings": {
       "post": {
-        "tags":["Post", "ComponentSettings"],
-        "summary":"Returns the current component settings",
-        "description":"Returns the current component settings",
-        "operationId":"postComponentSettings",
-        "produces":[
+        "tags": [ "Post", "ComponentSettings" ],
+        "summary": "Returns the current component settings",
+        "description": "Returns the current component settings",
+        "operationId": "postComponentSettings",
+        "produces": [
           "application/json"
         ],
-        "responses":
-        {
-          "200":
+        "parameters": [
           {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParamComponentSettingsPost"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
             "description": "successful operation",
-            "schema":
-            {
+            "schema": {
               "$ref": "#/definitions/ComponentSettings"
             }
           }
         }
       },
       "put": {
-        "tags":["Put", "ComponentSettings"],
-        "summary":"Sets a new component settings",
-        "description":"Sets a new component settings",
-        "operationId":"putComponentSettings",
+        "tags": [ "Put", "ComponentSettings" ],
+        "summary": "Sets a new component settings",
+        "description": "Sets a new component settings",
+        "operationId": "putComponentSettings",
         "consumes": [
           "application/json"
         ],
-        "produces":[
+        "produces": [
           "application/json"
         ],
         "parameters": [
@@ -60,10 +68,124 @@
             }
           }
         ],
-        "responses":
-        {
-          "200":
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/Fishes": {
+      "post": {
+        "tags": [ "Post", "Fishes" ],
+        "summary": "Returns the fishes that are inside the aquarium",
+        "description": "Returns the fishes that are inside the aquarium by name and quantity",
+        "operationId": "postFishes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
           {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParamFishes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Fishes"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [ "Put", "Fishes" ],
+        "summary": "Sets the fishes that are in the aquarium",
+        "description": "Sets the fishes that are in the aquarium",
+        "operationId": "putFishes",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Fishes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/Plants": {
+      "post": {
+        "tags": [ "Post", "Plants" ],
+        "summary": "Returns the plants in the soil",
+        "description": "Returns the plants in the soil",
+        "operationId": "postPlants",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParamPlants"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Plants"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [ "Put", "Plants" ],
+        "summary": "Sets the number of plants",
+        "description": "Sets the number of plants",
+        "operationId": "putPlants",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Plants"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
             "description": "successful operation"
           }
         }
@@ -74,6 +196,9 @@
     "ComponentSettings": {
       "description": "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.",
       "type": "object",
+      "required": [
+        "piid"
+      ],
       "properties": {
         "piid": {
           "type": "string",
@@ -93,7 +218,10 @@
         "waterlevelsensor": {
           "$ref": "#/definitions/WaterLevelSensor"
         },
-        "thermometer": {
+        "waterthermometer": {
+          "$ref": "#/definitions/Thermometer"
+        },
+        "airthermometer": {
           "$ref": "#/definitions/Thermometer"
         },
         "lamp": {
@@ -107,75 +235,157 @@
         }
       }
     },
-  	"WaterFlowSensor": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+    "ParamComponentSettingsPost": {
+      "type": "object",
+      "required": [
+        "piid"
+      ],
+      "properties": {
+        "piid": {
+          "type": "string",
+          "example": "abc123"
+        },
+        "since": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2017-07-21T17:32:28Z"
+        },
+        "until": {
+          "type": "string",
+          "format": "date-time",
+          "example": "2017-07-22T17:32:28Z"
         }
-  	},
-  	"LightSensor": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "WaterFlowSensor": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
         }
-  	},
-  	"WaterLevelSensor": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "LightSensor": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
         }
-  	},
-  	"Thermometer": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "WaterLevelSensor": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
         }
-  	},
-  	"Lamp": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "Thermometer": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "22.5"
         }
-  	},
-  	"Feeder": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "Lamp": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
         }
-  	},
-  	"Pump": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number",
-            "format": "float",
-            "example": "0.5"
-          }
+      }
+    },
+    "Feeder": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
         }
-  	}
+      }
+    },
+    "Pump": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "format": "float",
+          "example": "0.5"
+        }
+      }
+    },
+    "Fishes": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string",
+          "example": "abc123"
+        },
+        "fishid": {
+          "type": "string",
+          "example": "1"
+        },
+        "name": {
+          "type": "string",
+          "example": "goldfish"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "example": "5"
+        }
+      }
+    },
+    "ParamFishes": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string"
+        }
+      }
+    },
+    "Plants": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string",
+          "example":  "abc123"
+        },
+        "plantid": {
+          "type": "string",
+          "example": "1"
+        },
+        "name": {
+          "type": "string",
+          "example": "basil"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32",
+          "example": "5"
+        }
+      }
+    },
+    "ParamPlants": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string"
+        }
+      }
+    }
   }
 }

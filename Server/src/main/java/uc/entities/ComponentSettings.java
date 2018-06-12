@@ -7,7 +7,8 @@ public class ComponentSettings {
     private WaterFlowSensor waterFlowSensor;
     private LightSensor lightSensor;
     private WaterLevelSensor waterLevelSensor;
-    private Thermometer thermometer;
+    private Thermometer waterThermometer;
+    private Thermometer airThermometer;
     private Lamp lamp;
     private Feeder feeder;
     private Pump pump;
@@ -30,8 +31,11 @@ public class ComponentSettings {
     public WaterLevelSensor getWaterLevelSensor() { return waterLevelSensor; }
     public void setWaterLevelSensor(WaterLevelSensor waterLevelSensor) { this.waterLevelSensor = waterLevelSensor; }
 
-    public Thermometer getThermometer() { return thermometer; }
-    public void setThermometer(Thermometer thermometer) { this.thermometer = thermometer; }
+    public Thermometer getWaterThermometer() { return waterThermometer; }
+    public void setWaterThermometer(Thermometer thermometer) { this.waterThermometer = thermometer; }
+
+    public Thermometer getAirThermometer() { return airThermometer; }
+    public void setAirThermometer(Thermometer thermometer) { this.airThermometer = thermometer; }
 
     public Lamp getLamp() { return lamp; }
     public void setLamp(Lamp lamp) { this.lamp = lamp; }
@@ -51,7 +55,8 @@ public class ComponentSettings {
         result.setWaterFlowSensor(uc.entities.WaterFlowSensor.fromSwaggerObject(compSettings));
         result.setLightSensor(uc.entities.LightSensor.fromSwaggerObject(compSettings));
         result.setWaterLevelSensor(uc.entities.WaterLevelSensor.fromSwaggerObject(compSettings));
-        result.setThermometer(uc.entities.Thermometer.fromSwaggerObject(compSettings));
+        result.setWaterThermometer(uc.entities.Thermometer.fromSwaggerObject(compSettings.getWaterthermometer()));
+        result.setAirThermometer(uc.entities.Thermometer.fromSwaggerObject(compSettings.getAirthermometer()));
         result.setLamp(uc.entities.Lamp.fromSwaggerObject(compSettings));
         result.setFeeder(uc.entities.Feeder.fromSwaggerObject(compSettings));
         result.setPump(uc.entities.Pump.fromSwaggerObject(compSettings));
@@ -66,7 +71,8 @@ public class ComponentSettings {
         result.setWaterflowsensor(getWaterFlowSensor().toSwaggerObject());
         result.setLightsensor(getLightSensor().toSwaggerObject());
         result.setWaterlevelsensor(getWaterLevelSensor().toSwaggerObject());
-        result.setThermometer(getThermometer().toSwaggerObject());
+        result.setWaterthermometer(getWaterThermometer().toSwaggerObject());
+        result.setAirthermometer(getAirThermometer().toSwaggerObject());
         result.setLamp(getLamp().toSwaggerObject());
         result.setFeeder(getFeeder().toSwaggerObject());
         result.setPump(getPump().toSwaggerObject());

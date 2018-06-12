@@ -5,8 +5,8 @@ import io.swagger.model.*;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 
-import io.swagger.model.ComponentSettings;
-import io.swagger.model.ParamComponentSettingsPost;
+import io.swagger.model.ParamPlants;
+import io.swagger.model.Plants;
 
 import java.util.List;
 import io.swagger.api.NotFoundException;
@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
-public abstract class ComponentSettingsApiService {
-    public abstract Response postComponentSettings(ParamComponentSettingsPost request,SecurityContext securityContext) throws NotFoundException;
-    public abstract Response putComponentSettings(ComponentSettings request,SecurityContext securityContext) throws NotFoundException;
+public abstract class PlantsApiService {
+    public abstract Response postPlants(ParamPlants request,SecurityContext securityContext) throws NotFoundException;
+    public abstract Response putPlants(Plants request,SecurityContext securityContext) throws NotFoundException;
 }

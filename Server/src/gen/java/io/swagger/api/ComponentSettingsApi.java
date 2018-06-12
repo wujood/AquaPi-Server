@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
 import io.swagger.model.ComponentSettings;
+import io.swagger.model.ParamComponentSettingsPost;
 
 import java.util.Map;
 import java.util.List;
@@ -29,7 +30,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the ComponentSettings API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-05-20T07:41:23.957+02:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
 public class ComponentSettingsApi  {
    private final ComponentSettingsApiService delegate;
 
@@ -61,9 +62,10 @@ public class ComponentSettingsApi  {
     @io.swagger.annotations.ApiOperation(value = "Returns the current component settings", notes = "Returns the current component settings", response = ComponentSettings.class, tags={ "Post","ComponentSettings", })
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = ComponentSettings.class) })
-    public Response postComponentSettings(@Context SecurityContext securityContext)
+    public Response postComponentSettings(@ApiParam(value = "Request object for this operation" ,required=true) ParamComponentSettingsPost request
+,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.postComponentSettings(securityContext);
+        return delegate.postComponentSettings(request,securityContext);
     }
     @PUT
     

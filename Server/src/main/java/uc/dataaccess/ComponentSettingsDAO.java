@@ -16,7 +16,7 @@ public class ComponentSettingsDAO extends DAOBase {
 
         try {
             connection = getConnection();
-            statement = connection.prepareStatement("SELECT * FROM signals ");
+            statement = connection.prepareStatement("SELECT * FROM SIGNALS ");
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -24,26 +24,29 @@ public class ComponentSettingsDAO extends DAOBase {
                 WaterFlowSensor waterFlowSensor = new WaterFlowSensor();
                 LightSensor lightSensor = new LightSensor();
                 WaterLevelSensor waterLevelSensor = new WaterLevelSensor();
-                Thermometer thermometer = new Thermometer();
+                Thermometer waterThermometer = new Thermometer();
+                Thermometer airThermometer = new Thermometer();
                 Lamp lamp = new Lamp();
                 Feeder feeder = new Feeder();
                 Pump pump = new Pump();
 
-                componentSetting.setPiId(resultSet.getString("id"));
-                componentSetting.setTimestamp(resultSet.getDate("timestamp"));
-                waterFlowSensor.setValue(resultSet.getFloat("waterflowsensor_value"));
+                componentSetting.setPiId(resultSet.getString("ID"));
+                componentSetting.setTimestamp(new java.util.Date(resultSet.getTimestamp("TIMESTAMP").getTime()));
+                waterFlowSensor.setValue(resultSet.getFloat("WATERFLOWSENSOR"));
                 componentSetting.setWaterFlowSensor(waterFlowSensor);
-                lightSensor.setValue(resultSet.getFloat("lightsensor_value"));
+                lightSensor.setValue(resultSet.getFloat("LIGHTSENSOR"));
                 componentSetting.setLightSensor(lightSensor);
-                waterLevelSensor.setValue(resultSet.getFloat("waterlevelsensor_value"));
+                waterLevelSensor.setValue(resultSet.getFloat("WATERLEVELSENSOR"));
                 componentSetting.setWaterLevelSensor(waterLevelSensor);
-                thermometer.setValue(resultSet.getFloat("thermometer_value"));
-                componentSetting.setThermometer(thermometer);
-                lamp.setValue(resultSet.getFloat("lamp_value"));
+                waterThermometer.setValue(resultSet.getFloat("WATER_THERMOMETER"));
+                componentSetting.setWaterThermometer(waterThermometer);
+                airThermometer.setValue(resultSet.getFloat("AIR_THERMOMETER"));
+                componentSetting.setAirThermometer(airThermometer);
+                lamp.setValue(resultSet.getFloat("LAMP"));
                 componentSetting.setLamp(lamp);
-                feeder.setValue(resultSet.getFloat("feeder_value"));
+                feeder.setValue(resultSet.getFloat("FEEDER"));
                 componentSetting.setFeeder(feeder);
-                pump.setValue(resultSet.getFloat("pump_value"));
+                pump.setValue(resultSet.getFloat("PUMP"));
                 componentSetting.setPump(pump);
 
                 result.add(componentSetting);
@@ -59,5 +62,44 @@ public class ComponentSettingsDAO extends DAOBase {
         }
 
         return result;
+    }
+
+    public ComponentSettings putComponentSettings(ComponentSettings componentSettings) throws SQLException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet generatedKeys = null;
+
+        try {
+            connection = getConnection();
+
+            statement = connection.prepareStatement("INSERT INTO signals (" +
+                    "id, " +                // 1
+                    "waterflowsensor, " +   // 2
+                    "lightsensor, " +       // 3
+                    "waterlevelsensor, " +  // 4
+                    "water_thermometer, " + // 5
+                    "air_thermometer, " +   // 6
+                    "lamp, " +              // 7
+                    "feeder, " +            // 8
+                    "pump" +                // 9
+                    ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            statement.setString(1, componentSettings.getPiId());
+            statement.setFloat(2, componentSettings.getWaterFlowSensor().getValue());
+            statement.setFloat(3, componentSettings.getLightSensor().getValue());
+            statement.setFloat(4, componentSettings.getWaterLevelSensor().getValue());
+            statement.setFloat(5, componentSettings.getWaterThermometer().getValue());
+            statement.setFloat(6, componentSettings.getAirThermometer().getValue());
+            statement.setFloat(7, componentSettings.getLamp().getValue());
+            statement.setFloat(8, componentSettings.getFeeder().getValue());
+            statement.setFloat(9, componentSettings.getPump().getValue());
+            statement.execute();
+
+            return componentSettings;
+        } finally {
+            if (statement != null)
+                statement.close();
+            if (connection != null)
+                connection.close();
+        }
     }
 }
