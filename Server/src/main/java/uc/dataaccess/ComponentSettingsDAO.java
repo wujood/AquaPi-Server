@@ -144,14 +144,14 @@ public class ComponentSettingsDAO extends DAOBase {
                     "pump" +                // 9
                     ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, componentSettings.getPiId());
-            statement.setFloat(2, componentSettings.getWaterFlowSensor().getValue());
-            statement.setFloat(3, componentSettings.getLightSensor().getValue());
-            statement.setFloat(4, componentSettings.getWaterLevelSensor().getValue());
-            statement.setFloat(5, componentSettings.getWaterThermometer().getValue());
-            statement.setFloat(6, componentSettings.getAirThermometer().getValue());
-            statement.setFloat(7, componentSettings.getLamp().getValue());
-            statement.setFloat(8, componentSettings.getFeeder().getValue());
-            statement.setFloat(9, componentSettings.getPump().getValue());
+            statement.setFloat(2, (componentSettings.getWaterFlowSensor() == null) ? componentSettings.getWaterFlowSensor().getValue() : 0);
+            statement.setFloat(3, (componentSettings.getLightSensor() == null) ? componentSettings.getLightSensor().getValue() : 0);
+            statement.setFloat(4, (componentSettings.getWaterLevelSensor() == null) ? componentSettings.getWaterLevelSensor().getValue() : 0) ;
+            statement.setFloat(5, (componentSettings.getWaterThermometer() == null) ? componentSettings.getWaterThermometer().getValue() : 0) ;
+            statement.setFloat(6, (componentSettings.getAirThermometer() == null) ? componentSettings.getAirThermometer().getValue() : 0);
+            statement.setFloat(7, (componentSettings.getLamp() == null) ? componentSettings.getLamp().getValue() : 0);
+            statement.setFloat(8, (componentSettings.getFeeder() == null) ? componentSettings.getFeeder().getValue() : 0);
+            statement.setFloat(9, (componentSettings.getPump() == null) ? componentSettings.getPump().getValue() : 0);
             statement.execute();
 
             return componentSettings;
