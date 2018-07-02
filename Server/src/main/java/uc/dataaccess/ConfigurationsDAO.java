@@ -55,7 +55,7 @@ public class ConfigurationsDAO extends DAOBase {
         try {
             connection = getConnection();
 
-            statement = connection.prepareStatement("REPLACE INTO CONFGURATIONS (PI_ID, MIN_AIR_TEMPERATURE, MAX_AIR_TEMPERATURE, MIN_WATER_TEMPERATURE, MAX_WATER_TEMPERATURE, BRIGHTNESS_THRESHOLD, FEEDER_FREQUENCY, WATER_FLOW_SENSITIVITY, TOGGLE_PUSH_NOTIFICATIONS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            statement = connection.prepareStatement("REPLACE INTO CONFIGURATIONS (PI_ID, MIN_AIR_TEMPERATURE, MAX_AIR_TEMPERATURE, MIN_WATER_TEMPERATURE, MAX_WATER_TEMPERATURE, BRIGHTNESS_THRESHOLD, FEEDER_FREQUENCY, WATER_FLOW_SENSITIVITY, TOGGLE_PUSH_NOTIFICATIONS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, configurations.getPiId());
             statement.setFloat(2, configurations.getMinAirTemperature());
             statement.setFloat(3, configurations.getMaxAirTemperature());
