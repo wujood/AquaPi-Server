@@ -27,7 +27,7 @@ public class ConfigurationsDAO extends DAOBase {
                 result.setMaxAirTemperature(resultSet.getFloat("MAX_AIR_TEMPERATURE"));
                 result.setMinWaterTemperature(resultSet.getFloat("MIN_WATER_TEMPERATURE"));
                 result.setMaxWaterTemperature(resultSet.getFloat("MAX_WATER_TEMPERATURE"));
-                result.setBrightnessTreshhold(resultSet.getFloat("BRIGHTNESS_TRESHHOLD"));
+                result.setBrightnessTreshhold(resultSet.getFloat("BRIGHTNESS_THRESHOLD"));
                 result.setFeederFrequency(resultSet.getFloat("FEEDER_FREQUENCY"));
                 result.setWaterFlowSensitivity(resultSet.getFloat("WATER_FLOW_SENSITIVITY"));
                 result.setTogglePushNotifications(resultSet.getInt("TOGGLE_PUSH_NOTIFICATIONS"));
@@ -54,7 +54,7 @@ public class ConfigurationsDAO extends DAOBase {
         try {
             connection = getConnection();
 
-            statement = connection.prepareStatement("REPLACE INTO CONFGURATIONS (PI_ID, MIN_AIR_TEMPERATURE, MAX_AIR_TEMPERATURE, MIN_WATER_TEMPERATURE, MAX_WATER_TEMPERATURE, BRIGHTNESS_TRESHHOLD, FEEDER_FREQUENCY, WATER_FLOW_SENSITIVITY, TOGGLE_PUSH_NOTIFICATIONS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            statement = connection.prepareStatement("REPLACE INTO CONFGURATIONS (PI_ID, MIN_AIR_TEMPERATURE, MAX_AIR_TEMPERATURE, MIN_WATER_TEMPERATURE, MAX_WATER_TEMPERATURE, BRIGHTNESS_THRESHOLD, FEEDER_FREQUENCY, WATER_FLOW_SENSITIVITY, TOGGLE_PUSH_NOTIFICATIONS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, configurations.getPiId());
             statement.setFloat(2, configurations.getMinAirTemperature());
             statement.setFloat(3, configurations.getMaxAirTemperature());
