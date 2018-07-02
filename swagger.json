@@ -6,7 +6,7 @@
     "title": "AquaPi Swagger API"
   },
   "basePath": "/api",
-  "host": "localhost:8080",
+  "host": "aquapihome.ddns.net:8080",
   "schemes": [
     "http"
   ],
@@ -362,7 +362,7 @@
       "properties": {
         "piid": {
           "type": "string",
-          "example":  "abc123"
+          "example": "abc123"
         },
         "plantid": {
           "type": "string",
