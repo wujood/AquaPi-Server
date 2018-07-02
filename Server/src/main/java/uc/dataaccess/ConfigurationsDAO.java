@@ -23,6 +23,7 @@ public class ConfigurationsDAO extends DAOBase {
 
             while (resultSet.next()) {
                 Configurations result = new Configurations();
+                result.setPiId(resultSet.getString("PI_ID"));
                 result.setMinAirTemperature(resultSet.getFloat("MIN_AIR_TEMPERATURE"));
                 result.setMaxAirTemperature(resultSet.getFloat("MAX_AIR_TEMPERATURE"));
                 result.setMinWaterTemperature(resultSet.getFloat("MIN_WATER_TEMPERATURE"));
