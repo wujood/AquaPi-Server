@@ -202,6 +202,67 @@
           }
         }
       }
+    },
+    "/Configuration": {
+      "post": {
+        "tags": [ "Post", "Configuration" ],
+        "summary": "Returns the current configurations",
+        "description": "Returns the current configuration",
+        "operationId": "postConfiguration",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParamConfiguration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Configuration"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [ "Put", "Configuration" ],
+        "summary": "Sets new configurations",
+        "description": "Sets new configurations",
+        "operationId": "putConfiguration",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "Request object for this operation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Configuration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Configuration"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -420,6 +481,62 @@
       }
     },
     "ParamPlants": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string"
+        }
+      }
+    },
+    "Configuration": {
+      "type": "object",
+      "properties": {
+        "piid": {
+          "type": "string",
+          "example":  "Fibonacci"
+        },
+        "minairtemperature": {
+          "type": "number",
+          "format": "float",
+          "example": "0"
+        },
+        "maxairtemperature": {
+          "type": "number",
+          "format": "float",
+          "example": "100"
+        },
+        "minwatertemperature": {
+          "type": "number",
+          "format": "float",
+          "example": "0"
+        },
+        "maxwatertemperature": {
+          "type": "number",
+          "format": "float",
+          "example": "100"
+        },
+        "brightnesstreshhold": {
+          "type": "number",
+          "format": "float",
+          "example": "5.1"
+        },
+        "feederfrequency": {
+          "type": "number",
+          "format": "float",
+          "example": "20"
+        },
+        "togglepushnotifications": {
+          "type": "number",
+          "example": "true"
+        },
+        "waterflowsensitivity": {
+          "type": "number",
+          "format": "float",
+          "example": "1.1"
+        }
+      }
+    },
+    "ParamConfiguration": {
       "type": "object",
       "properties": {
         "piid": {
