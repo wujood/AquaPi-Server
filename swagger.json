@@ -203,12 +203,12 @@
         }
       }
     },
-    "/Configuration": {
+    "/PushConfiguration": {
       "post": {
-        "tags": [ "Post", "Configuration" ],
-        "summary": "Returns the current configurations",
-        "description": "Returns the current configuration",
-        "operationId": "postConfiguration",
+        "tags": [ "Post", "PushConfiguration" ],
+        "summary": "Returns the current PushConfigurations",
+        "description": "Returns the current PushConfiguration",
+        "operationId": "postPushConfiguration",
         "produces": [
           "application/json"
         ],
@@ -219,7 +219,7 @@
             "description": "Request object for this operation",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ParamConfiguration"
+              "$ref": "#/definitions/ParamPushConfiguration"
             }
           }
         ],
@@ -227,16 +227,16 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Configuration"
+              "$ref": "#/definitions/PushConfiguration"
             }
           }
         }
       },
       "put": {
-        "tags": [ "Put", "Configuration" ],
-        "summary": "Sets new configurations",
-        "description": "Sets new configurations",
-        "operationId": "putConfiguration",
+        "tags": [ "Put", "PushConfiguration" ],
+        "summary": "Sets new PushConfigurations",
+        "description": "Sets new PushConfigurations",
+        "operationId": "putPushConfiguration",
         "consumes": [
           "application/json"
         ],
@@ -250,7 +250,7 @@
             "description": "Request object for this operation",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Configuration"
+              "$ref": "#/definitions/PushConfiguration"
             }
           }
         ],
@@ -258,7 +258,7 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Configuration"
+              "$ref": "#/definitions/PushConfiguration"
             }
           }
         }
@@ -488,7 +488,7 @@
         }
       }
     },
-    "Configuration": {
+    "PushConfiguration": {
       "type": "object",
       "properties": {
         "piid": {
@@ -526,7 +526,8 @@
           "example": "20"
         },
         "togglepushnotifications": {
-          "type": "number",
+          "type": "integer",
+          "format": "int32",
           "example": "true"
         },
         "waterflowsensitivity": {
@@ -536,7 +537,7 @@
         }
       }
     },
-    "ParamConfiguration": {
+    "ParamPushConfiguration": {
       "type": "object",
       "properties": {
         "piid": {
