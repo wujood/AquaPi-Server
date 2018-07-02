@@ -15,10 +15,20 @@ public class WaterLevelSensor {
         this.value = value;
     }
 
+    private String message;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
     public static WaterLevelSensor fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         WaterLevelSensor result = new WaterLevelSensor();
         result.setValue(compSettings.getWaterlevelsensor().getValue());
+        result.setMessage(compSettings.getWaterlevelsensor().getMessage());
         return result;
     }
 
@@ -26,12 +36,14 @@ public class WaterLevelSensor {
     {
         WaterLevelSensor result = new WaterLevelSensor();
         result.setValue(swagWaterLevelSensor.getValue());
+        result.setMessage(swagWaterLevelSensor.getMessage());
         return result;
     }
 
     public io.swagger.model.WaterLevelSensor toSwaggerObject() {
         io.swagger.model.WaterLevelSensor result = new io.swagger.model.WaterLevelSensor();
         result.setValue(getValue());
+        result.setMessage(getMessage());
         return result;
     }
 }

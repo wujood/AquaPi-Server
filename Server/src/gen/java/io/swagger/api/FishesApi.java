@@ -30,7 +30,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the Fishes API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class FishesApi  {
    private final FishesApiService delegate;
 
@@ -59,9 +59,9 @@ public class FishesApi  {
     
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Returns the fishes that are inside the aquarium", notes = "Returns the fishes that are inside the aquarium by name and quantity", response = Fishes.class, tags={ "Post","Fishes", })
+    @io.swagger.annotations.ApiOperation(value = "Returns the fishes that are inside the aquarium", notes = "Returns the fishes that are inside the aquarium by name and quantity", response = Fishes.class, responseContainer = "List", tags={ "Post","Fishes", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Fishes.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Fishes.class, responseContainer = "List") })
     public Response postFishes(@ApiParam(value = "Request object for this operation" ,required=true) ParamFishes request
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
@@ -71,9 +71,9 @@ public class FishesApi  {
     
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Sets the fishes that are in the aquarium", notes = "Sets the fishes that are in the aquarium", response = Void.class, tags={ "Put","Fishes", })
+    @io.swagger.annotations.ApiOperation(value = "Sets the fishes that are in the aquarium", notes = "Sets the fishes that are in the aquarium", response = Fishes.class, tags={ "Put","Fishes", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Void.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Fishes.class) })
     public Response putFishes(@ApiParam(value = "Request object for this operation" ,required=true) Fishes request
 ,@Context SecurityContext securityContext)
     throws NotFoundException {

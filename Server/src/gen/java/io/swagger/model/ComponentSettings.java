@@ -32,7 +32,7 @@ import javax.validation.constraints.*;
  * Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.
  */
 @ApiModel(description = "Data structure that holds information about all used components. Also holds the Pi Id and a timestamp.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class ComponentSettings   {
   @JsonProperty("piid")
   private String piid = null;

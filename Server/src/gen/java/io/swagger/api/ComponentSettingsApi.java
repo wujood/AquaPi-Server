@@ -30,7 +30,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the ComponentSettings API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class ComponentSettingsApi  {
    private final ComponentSettingsApiService delegate;
 
@@ -59,9 +59,9 @@ public class ComponentSettingsApi  {
     
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Returns the current component settings", notes = "Returns the current component settings", response = ComponentSettings.class, tags={ "Post","ComponentSettings", })
+    @io.swagger.annotations.ApiOperation(value = "Returns the current component settings", notes = "Returns the current component settings", response = ComponentSettings.class, responseContainer = "List", tags={ "Post","ComponentSettings", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = ComponentSettings.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = ComponentSettings.class, responseContainer = "List") })
     public Response postComponentSettings(@ApiParam(value = "Request object for this operation" ,required=true) ParamComponentSettingsPost request
 ,@Context SecurityContext securityContext)
     throws NotFoundException {

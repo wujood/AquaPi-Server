@@ -15,10 +15,20 @@ public class LightSensor {
         this.value = value;
     }
 
+    private String message;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
     public static LightSensor fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         LightSensor result = new LightSensor();
         result.setValue(compSettings.getLightsensor().getValue());
+        result.setMessage(compSettings.getLightsensor().getMessage());
         return result;
     }
 
@@ -26,12 +36,14 @@ public class LightSensor {
     {
         LightSensor result = new LightSensor();
         result.setValue(swagLightSensor.getValue());
+        result.setMessage(swagLightSensor.getMessage());
         return result;
     }
 
     public io.swagger.model.LightSensor toSwaggerObject() {
         io.swagger.model.LightSensor result = new io.swagger.model.LightSensor();
         result.setValue(getValue());
+        result.setMessage(getMessage());
         return result;
     }
 }

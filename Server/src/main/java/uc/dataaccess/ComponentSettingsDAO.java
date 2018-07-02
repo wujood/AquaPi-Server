@@ -88,22 +88,36 @@ public class ComponentSettingsDAO extends DAOBase {
                 Feeder feeder = new Feeder();
                 Pump pump = new Pump();
 
+                // PIID
                 componentSetting.setPiId(resultSet.getString("PI_ID"));
+                // TIMESTAMP
                 componentSetting.setTimestamp(new java.util.Date(resultSet.getTimestamp("TIMESTAMP").getTime()));
+                // WATERFLOW SENSOR
                 waterFlowSensor.setValue(resultSet.getFloat("WATERFLOWSENSOR"));
                 componentSetting.setWaterFlowSensor(waterFlowSensor);
+                // LIGHT SENSOR
                 lightSensor.setValue(resultSet.getFloat("LIGHTSENSOR"));
                 componentSetting.setLightSensor(lightSensor);
+                // WATER LEVEL SENSOR
                 waterLevelSensor.setValue(resultSet.getFloat("WATERLEVELSENSOR"));
                 componentSetting.setWaterLevelSensor(waterLevelSensor);
+                // WATER THERMOMETER
                 waterThermometer.setValue(resultSet.getFloat("WATER_THERMOMETER"));
+                if(waterThermometer.getValue() > 30)
+                    waterThermometer.setMessage("Warning! Water temperature is over 30°");
                 componentSetting.setWaterThermometer(waterThermometer);
+                // AIR THERMOMETER
                 airThermometer.setValue(resultSet.getFloat("AIR_THERMOMETER"));
+                if(airThermometer.getValue() > 30)
+                    airThermometer.setMessage("Warning! Air temperature is over 30°");
                 componentSetting.setAirThermometer(airThermometer);
+                // LAMP
                 lamp.setValue(resultSet.getFloat("LAMP"));
                 componentSetting.setLamp(lamp);
+                // FEEDER
                 feeder.setValue(resultSet.getFloat("FEEDER"));
                 componentSetting.setFeeder(feeder);
+                // PUMP
                 pump.setValue(resultSet.getFloat("PUMP"));
                 componentSetting.setPump(pump);
 

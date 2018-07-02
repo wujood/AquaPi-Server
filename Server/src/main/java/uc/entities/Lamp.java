@@ -15,10 +15,20 @@ public class Lamp {
         this.value = value;
     }
 
+    private String message;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message){
+        this.message = message;
+    }
+
     public static Lamp fromSwaggerObject(io.swagger.model.ComponentSettings compSettings)
     {
         Lamp result = new Lamp();
         result.setValue(compSettings.getLamp().getValue());
+        result.setMessage(compSettings.getLamp().getMessage());
         return result;
     }
 
@@ -26,12 +36,14 @@ public class Lamp {
     {
         Lamp result = new Lamp();
         result.setValue(swagLamp.getValue());
+        result.setMessage(swagLamp.getMessage());
         return result;
     }
 
     public io.swagger.model.Lamp toSwaggerObject() {
         io.swagger.model.Lamp result = new io.swagger.model.Lamp();
         result.setValue(getValue());
+        result.setMessage(getMessage());
         return result;
     }
 }

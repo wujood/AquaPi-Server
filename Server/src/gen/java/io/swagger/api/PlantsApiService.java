@@ -16,7 +16,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public abstract class PlantsApiService {
     public abstract Response postPlants(ParamPlants request,SecurityContext securityContext) throws NotFoundException;
     public abstract Response putPlants(Plants request,SecurityContext securityContext) throws NotFoundException;

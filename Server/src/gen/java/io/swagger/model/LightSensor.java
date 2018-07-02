@@ -23,10 +23,13 @@ import javax.validation.constraints.*;
 /**
  * LightSensor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class LightSensor   {
   @JsonProperty("value")
   private Float value = null;
+
+  @JsonProperty("message")
+  private String message = null;
 
   public LightSensor value(Float value) {
     this.value = value;
@@ -47,6 +50,25 @@ public class LightSensor   {
     this.value = value;
   }
 
+  public LightSensor message(String message) {
+    this.message = message;
+    return this;
+  }
+
+  /**
+   * Get message
+   * @return message
+   **/
+  @JsonProperty("message")
+  @ApiModelProperty(example = "everything is fine", value = "")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -57,12 +79,13 @@ public class LightSensor   {
       return false;
     }
     LightSensor lightSensor = (LightSensor) o;
-    return Objects.equals(this.value, lightSensor.value);
+    return Objects.equals(this.value, lightSensor.value) &&
+        Objects.equals(this.message, lightSensor.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value);
+    return Objects.hash(value, message);
   }
 
 
@@ -72,6 +95,7 @@ public class LightSensor   {
     sb.append("class LightSensor {\n");
     
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

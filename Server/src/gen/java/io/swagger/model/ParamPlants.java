@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * ParamPlants
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class ParamPlants   {
   @JsonProperty("piid")
   private String piid = null;

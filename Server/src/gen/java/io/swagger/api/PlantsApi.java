@@ -30,7 +30,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the Plants API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-06-12T17:16:07.145Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
 public class PlantsApi  {
    private final PlantsApiService delegate;
 
@@ -59,9 +59,9 @@ public class PlantsApi  {
     
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Returns the plants in the soil", notes = "Returns the plants in the soil", response = Plants.class, tags={ "Post","Plants", })
+    @io.swagger.annotations.ApiOperation(value = "Returns the plants in the soil", notes = "Returns the plants in the soil", response = Plants.class, responseContainer = "List", tags={ "Post","Plants", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Plants.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Plants.class, responseContainer = "List") })
     public Response postPlants(@ApiParam(value = "Request object for this operation" ,required=true) ParamPlants request
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
