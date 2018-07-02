@@ -1,0 +1,5 @@
+"Originalität und Qualität von Konzeption und Realisierung (20%)"
+- Verbesserung und Ergänzung einer bereits bestehenden Idee
+
+"Berücksichtigung UC-spezifischer Aspekte (20%)"
+- 

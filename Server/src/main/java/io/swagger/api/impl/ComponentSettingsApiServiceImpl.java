@@ -41,7 +41,12 @@ public class ComponentSettingsApiServiceImpl extends ComponentSettingsApiService
 
     @Override
     public Response postComponentSettings(ParamComponentSettingsPost request,SecurityContext securityContext) throws NotFoundException {
-        OperationResult<List<uc.entities.ComponentSettings>> bllResult = componentSettingsLogic.getComponentSettings();
+        OperationResult<List<uc.entities.ComponentSettings>> bllResult;
+        
+        if(request.getPiid() == null || request.getPiid() == "")
+            bllResult = componentSettingsLogic.getComponentSettings();
+        else
+            bllResult = componentSettingsLogic.getComponentSettings(request.getPiid());
 
         if (!bllResult.isSucceeded())
             return Response.serverError().entity(new ApiResponseMessage(ApiResponseMessage.ERROR, bllResult.getMessage())).build();

@@ -27,6 +27,19 @@ public class ComponentSettingsLogic extends LogicBase {
         return result;
     }
 
+    public OperationResult<List<ComponentSettings>> getComponentSettings(String piid) {
+        OperationResult<List<ComponentSettings>> result = new OperationResult<>();
+
+        try {
+            result.setResult(dao.getComponentSettings(piid));
+            result.setSucceeded(true);
+        } catch (Exception ex) {
+            handleException(result, ex);
+        }
+
+        return result;
+    }
+
     public OperationResult<ComponentSettings> putComponentSettings(ComponentSettings componentSettings) {
         OperationResult<ComponentSettings> result = new OperationResult<>();
 

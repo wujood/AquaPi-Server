@@ -41,7 +41,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/ComponentSettings"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ComponentSettings"
+              }
             }
           }
         }
@@ -91,7 +94,10 @@
             "description": "Request object for this operation",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ParamFishes"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ParamFishes"
+              }
             }
           }
         ],
@@ -99,7 +105,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Fishes"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Fishes"
+              }
             }
           }
         }
@@ -128,7 +137,10 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Fishes"
+            }
           }
         }
       }
@@ -149,7 +161,10 @@
             "description": "Request object for this operation",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/ParamPlants"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ParamPlants"
+              }
             }
           }
         ],
