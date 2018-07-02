@@ -30,7 +30,7 @@ public class ComponentSettingsDAO extends DAOBase {
                 Feeder feeder = new Feeder();
                 Pump pump = new Pump();
 
-                componentSetting.setPiId(resultSet.getString("ID"));
+                componentSetting.setPiId(resultSet.getString("PI_ID"));
                 componentSetting.setTimestamp(new java.util.Date(resultSet.getTimestamp("TIMESTAMP").getTime()));
                 waterFlowSensor.setValue(resultSet.getFloat("WATERFLOWSENSOR"));
                 componentSetting.setWaterFlowSensor(waterFlowSensor);
@@ -72,8 +72,8 @@ public class ComponentSettingsDAO extends DAOBase {
         try {
             connection = getConnection();
 
-            statement = connection.prepareStatement("INSERT INTO signals (" +
-                    "id, " +                // 1
+            statement = connection.prepareStatement("INSERT INTO SIGNALS (" +
+                    "pi_id, " +                // 1
                     "waterflowsensor, " +   // 2
                     "lightsensor, " +       // 3
                     "waterlevelsensor, " +  // 4
