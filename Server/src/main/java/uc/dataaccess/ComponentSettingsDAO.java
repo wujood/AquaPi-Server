@@ -16,8 +16,7 @@ public class ComponentSettingsDAO extends DAOBase {
         return getComponentSettingsBase(null);
     }
 
-    private List<ComponentSettings> getComponentSettingsBase(String piid)
-    {
+    private List<ComponentSettings> getComponentSettingsBase(String piid) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
