@@ -9,11 +9,11 @@ import java.util.List;
 public class ComponentSettingsDAO extends DAOBase {
 
     public List<ComponentSettings> getComponentSettings(String piid) throws SQLException {
-        getComponentSettingsBase(piid);
+        return getComponentSettingsBase(piid);
     }
 
     public List<ComponentSettings> getComponentSettings() throws SQLException {
-        getComponentSettingsBase(null);
+        return getComponentSettingsBase(null);
     }
 
     private List<ComponentSettings> getComponentSettingsBase(String piid)
