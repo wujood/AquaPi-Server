@@ -17,7 +17,7 @@ public class FishesDAO extends DAOBase {
         try {
             connection = getConnection();
 
-            statement = connection.prepareStatement("SELECT FISHES_IN_PI.FISH_ID, NAME, QUANTITY FROM FISHES_IN_PI JOIN ALL_FISHES ON (FISHES_IN_PI.FISH_ID = ALL_FISHES.FISH_ID) WHERE FISHES_IN_PI.PI_ID = ?");
+            statement = connection.prepareStatement("SELECT FISHES_IN_PI.FISH_ID, NAME, QUANTITY FROM FISHES_IN_PI JOIN ALL_FISHES ON (FISHES_IN_PI.FISH_ID = ALL_FISHES.FISH_ID) WHERE FISHES_IN_PI.PI_ID = ? AND QUANTITY > 0");
             statement.setString(1, piid);
             resultSet = statement.executeQuery();
 

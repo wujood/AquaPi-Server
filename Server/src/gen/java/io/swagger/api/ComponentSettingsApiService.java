@@ -16,7 +16,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T11:53:15.413Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T15:37:09.690Z")
 public abstract class ComponentSettingsApiService {
     public abstract Response postComponentSettings(ParamComponentSettingsPost request,SecurityContext securityContext) throws NotFoundException;
     public abstract Response putComponentSettings(ComponentSettings request,SecurityContext securityContext) throws NotFoundException;

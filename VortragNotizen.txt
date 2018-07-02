@@ -2,4 +2,17 @@
 - Verbesserung und Ergänzung einer bereits bestehenden Idee
 
 "Berücksichtigung UC-spezifischer Aspekte (20%)"
-- 
+- seamless
+	passives gerät, konfig automatisiert
+- smart
+	hilft bei der mobilen Steuerung des Aquapi
+	kommuniziert mit dem nutzer auf abruf
+- ubiquitous/ambient/pervasive
+	funktioniert autonom, übernimmt die bisher notwendigen Aufgaben
+	ist im Wohnraum als passives Gerät
+- context-aware
+	passt sich den gegebenenheiten insoweit an, dass einstellungen abhängig von Pflanzen, Fischen, Temperaturen etc. vorgenommen werden
+
+"Einsatz und Agilität (20%)"
+- Motivation
+	Klimaschutz, Frisches Essen, 
