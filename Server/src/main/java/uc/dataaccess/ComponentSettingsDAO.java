@@ -133,7 +133,7 @@ public class ComponentSettingsDAO extends DAOBase {
             connection = getConnection();
 
             statement = connection.prepareStatement("INSERT INTO SIGNALS (" +
-                    "pi_id, " +                // 1
+                    "pi_id, " +             // 1
                     "waterflowsensor, " +   // 2
                     "lightsensor, " +       // 3
                     "waterlevelsensor, " +  // 4
@@ -144,14 +144,14 @@ public class ComponentSettingsDAO extends DAOBase {
                     "pump" +                // 9
                     ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             statement.setString(1, componentSettings.getPiId());
-            statement.setFloat(2, (componentSettings.getWaterFlowSensor() == null) ? componentSettings.getWaterFlowSensor().getValue() : 0);
-            statement.setFloat(3, (componentSettings.getLightSensor() == null) ? componentSettings.getLightSensor().getValue() : 0);
-            statement.setFloat(4, (componentSettings.getWaterLevelSensor() == null) ? componentSettings.getWaterLevelSensor().getValue() : 0) ;
-            statement.setFloat(5, (componentSettings.getWaterThermometer() == null) ? componentSettings.getWaterThermometer().getValue() : 0) ;
-            statement.setFloat(6, (componentSettings.getAirThermometer() == null) ? componentSettings.getAirThermometer().getValue() : 0);
-            statement.setFloat(7, (componentSettings.getLamp() == null) ? componentSettings.getLamp().getValue() : 0);
-            statement.setFloat(8, (componentSettings.getFeeder() == null) ? componentSettings.getFeeder().getValue() : 0);
-            statement.setFloat(9, (componentSettings.getPump() == null) ? componentSettings.getPump().getValue() : 0);
+            statement.setFloat(2, (componentSettings.getWaterFlowSensor() != null) ? componentSettings.getWaterFlowSensor().getValue() : 0);
+            statement.setFloat(3, (componentSettings.getLightSensor() != null) ? componentSettings.getLightSensor().getValue() : 0);
+            statement.setFloat(4, (componentSettings.getWaterLevelSensor() != null) ? componentSettings.getWaterLevelSensor().getValue() : 0) ;
+            statement.setFloat(5, (componentSettings.getWaterThermometer() != null) ? componentSettings.getWaterThermometer().getValue() : 0) ;
+            statement.setFloat(6, (componentSettings.getAirThermometer() != null) ? componentSettings.getAirThermometer().getValue() : 0);
+            statement.setFloat(7, (componentSettings.getLamp() != null) ? componentSettings.getLamp().getValue() : 0);
+            statement.setFloat(8, (componentSettings.getFeeder() != null) ? componentSettings.getFeeder().getValue() : 0);
+            statement.setFloat(9, (componentSettings.getPump() != null) ? componentSettings.getPump().getValue() : 0);
             statement.execute();
 
             return componentSettings;
