@@ -447,7 +447,17 @@
           "type": "integer",
           "format": "int32",
           "example": "5"
-        }
+        },
+        "mintemp": { "type": "integer" },
+        "maxtemp": { "type": "integer" },
+        "frostfood": { "type": "integer" },
+        "flakefood": { "type": "integer" },
+        "livefood": { "type": "integer" },
+        "needshiding": { "type": "integer" },
+        "helplink": { "type": "string" },
+        "piclink": { "type": "string" },
+        "minquantity": { "type": "integer" },
+        "weight": { "type": "integer" }
       }
     },
     "ParamFishes": {

@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * Fishes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T15:37:09.690Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T22:14:25.781Z")
 public class Fishes   {
   @JsonProperty("piid")
   private String piid = null;
@@ -36,6 +36,36 @@ public class Fishes   {
 
   @JsonProperty("quantity")
   private Integer quantity = null;
+
+  @JsonProperty("mintemp")
+  private Integer mintemp = null;
+
+  @JsonProperty("maxtemp")
+  private Integer maxtemp = null;
+
+  @JsonProperty("frostfood")
+  private Integer frostfood = null;
+
+  @JsonProperty("flakefood")
+  private Integer flakefood = null;
+
+  @JsonProperty("livefood")
+  private Integer livefood = null;
+
+  @JsonProperty("needshiding")
+  private Integer needshiding = null;
+
+  @JsonProperty("helplink")
+  private String helplink = null;
+
+  @JsonProperty("piclink")
+  private String piclink = null;
+
+  @JsonProperty("minquantity")
+  private Integer minquantity = null;
+
+  @JsonProperty("weight")
+  private Integer weight = null;
 
   public Fishes piid(String piid) {
     this.piid = piid;
@@ -113,6 +143,196 @@ public class Fishes   {
     this.quantity = quantity;
   }
 
+  public Fishes mintemp(Integer mintemp) {
+    this.mintemp = mintemp;
+    return this;
+  }
+
+  /**
+   * Get mintemp
+   * @return mintemp
+   **/
+  @JsonProperty("mintemp")
+  @ApiModelProperty(value = "")
+  public Integer getMintemp() {
+    return mintemp;
+  }
+
+  public void setMintemp(Integer mintemp) {
+    this.mintemp = mintemp;
+  }
+
+  public Fishes maxtemp(Integer maxtemp) {
+    this.maxtemp = maxtemp;
+    return this;
+  }
+
+  /**
+   * Get maxtemp
+   * @return maxtemp
+   **/
+  @JsonProperty("maxtemp")
+  @ApiModelProperty(value = "")
+  public Integer getMaxtemp() {
+    return maxtemp;
+  }
+
+  public void setMaxtemp(Integer maxtemp) {
+    this.maxtemp = maxtemp;
+  }
+
+  public Fishes frostfood(Integer frostfood) {
+    this.frostfood = frostfood;
+    return this;
+  }
+
+  /**
+   * Get frostfood
+   * @return frostfood
+   **/
+  @JsonProperty("frostfood")
+  @ApiModelProperty(value = "")
+  public Integer getFrostfood() {
+    return frostfood;
+  }
+
+  public void setFrostfood(Integer frostfood) {
+    this.frostfood = frostfood;
+  }
+
+  public Fishes flakefood(Integer flakefood) {
+    this.flakefood = flakefood;
+    return this;
+  }
+
+  /**
+   * Get flakefood
+   * @return flakefood
+   **/
+  @JsonProperty("flakefood")
+  @ApiModelProperty(value = "")
+  public Integer getFlakefood() {
+    return flakefood;
+  }
+
+  public void setFlakefood(Integer flakefood) {
+    this.flakefood = flakefood;
+  }
+
+  public Fishes livefood(Integer livefood) {
+    this.livefood = livefood;
+    return this;
+  }
+
+  /**
+   * Get livefood
+   * @return livefood
+   **/
+  @JsonProperty("livefood")
+  @ApiModelProperty(value = "")
+  public Integer getLivefood() {
+    return livefood;
+  }
+
+  public void setLivefood(Integer livefood) {
+    this.livefood = livefood;
+  }
+
+  public Fishes needshiding(Integer needshiding) {
+    this.needshiding = needshiding;
+    return this;
+  }
+
+  /**
+   * Get needshiding
+   * @return needshiding
+   **/
+  @JsonProperty("needshiding")
+  @ApiModelProperty(value = "")
+  public Integer getNeedshiding() {
+    return needshiding;
+  }
+
+  public void setNeedshiding(Integer needshiding) {
+    this.needshiding = needshiding;
+  }
+
+  public Fishes helplink(String helplink) {
+    this.helplink = helplink;
+    return this;
+  }
+
+  /**
+   * Get helplink
+   * @return helplink
+   **/
+  @JsonProperty("helplink")
+  @ApiModelProperty(value = "")
+  public String getHelplink() {
+    return helplink;
+  }
+
+  public void setHelplink(String helplink) {
+    this.helplink = helplink;
+  }
+
+  public Fishes piclink(String piclink) {
+    this.piclink = piclink;
+    return this;
+  }
+
+  /**
+   * Get piclink
+   * @return piclink
+   **/
+  @JsonProperty("piclink")
+  @ApiModelProperty(value = "")
+  public String getPiclink() {
+    return piclink;
+  }
+
+  public void setPiclink(String piclink) {
+    this.piclink = piclink;
+  }
+
+  public Fishes minquantity(Integer minquantity) {
+    this.minquantity = minquantity;
+    return this;
+  }
+
+  /**
+   * Get minquantity
+   * @return minquantity
+   **/
+  @JsonProperty("minquantity")
+  @ApiModelProperty(value = "")
+  public Integer getMinquantity() {
+    return minquantity;
+  }
+
+  public void setMinquantity(Integer minquantity) {
+    this.minquantity = minquantity;
+  }
+
+  public Fishes weight(Integer weight) {
+    this.weight = weight;
+    return this;
+  }
+
+  /**
+   * Get weight
+   * @return weight
+   **/
+  @JsonProperty("weight")
+  @ApiModelProperty(value = "")
+  public Integer getWeight() {
+    return weight;
+  }
+
+  public void setWeight(Integer weight) {
+    this.weight = weight;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,12 +346,22 @@ public class Fishes   {
     return Objects.equals(this.piid, fishes.piid) &&
         Objects.equals(this.fishid, fishes.fishid) &&
         Objects.equals(this.name, fishes.name) &&
-        Objects.equals(this.quantity, fishes.quantity);
+        Objects.equals(this.quantity, fishes.quantity) &&
+        Objects.equals(this.mintemp, fishes.mintemp) &&
+        Objects.equals(this.maxtemp, fishes.maxtemp) &&
+        Objects.equals(this.frostfood, fishes.frostfood) &&
+        Objects.equals(this.flakefood, fishes.flakefood) &&
+        Objects.equals(this.livefood, fishes.livefood) &&
+        Objects.equals(this.needshiding, fishes.needshiding) &&
+        Objects.equals(this.helplink, fishes.helplink) &&
+        Objects.equals(this.piclink, fishes.piclink) &&
+        Objects.equals(this.minquantity, fishes.minquantity) &&
+        Objects.equals(this.weight, fishes.weight);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(piid, fishid, name, quantity);
+    return Objects.hash(piid, fishid, name, quantity, mintemp, maxtemp, frostfood, flakefood, livefood, needshiding, helplink, piclink, minquantity, weight);
   }
 
 
@@ -144,6 +374,16 @@ public class Fishes   {
     sb.append("    fishid: ").append(toIndentedString(fishid)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    mintemp: ").append(toIndentedString(mintemp)).append("\n");
+    sb.append("    maxtemp: ").append(toIndentedString(maxtemp)).append("\n");
+    sb.append("    frostfood: ").append(toIndentedString(frostfood)).append("\n");
+    sb.append("    flakefood: ").append(toIndentedString(flakefood)).append("\n");
+    sb.append("    livefood: ").append(toIndentedString(livefood)).append("\n");
+    sb.append("    needshiding: ").append(toIndentedString(needshiding)).append("\n");
+    sb.append("    helplink: ").append(toIndentedString(helplink)).append("\n");
+    sb.append("    piclink: ").append(toIndentedString(piclink)).append("\n");
+    sb.append("    minquantity: ").append(toIndentedString(minquantity)).append("\n");
+    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
     sb.append("}");
     return sb.toString();
   }

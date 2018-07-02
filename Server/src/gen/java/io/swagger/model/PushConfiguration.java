@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * PushConfiguration
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T15:37:09.690Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T22:14:25.781Z")
 public class PushConfiguration   {
   @JsonProperty("piid")
   private String piid = null;
