@@ -4,6 +4,8 @@ import org.w3c.dom.stylesheets.LinkStyle;
 import uc.dataaccess.FishesDAO;
 import uc.entities.*;
 
+import java.sql.SQLException;
+
 import java.util.List;
 
 public class FishesLogic extends LogicBase {
@@ -33,20 +35,12 @@ public class FishesLogic extends LogicBase {
         return result;
     }
 
-    public int getMaxTemp(String piid) {
-        try{
-            return dao.getMaxTemp(piid);
-        } catch (Exception ex) {
-            return -1;
-        }
+    public int getMaxTemp(String piid) throws SQLException {
+        return dao.getMaxTemp(piid);
     }
 
-    public int getMinTemp(String piid) {
-        try{
-            return dao.getMinTemp(piid);
-        } catch (Exception ex) {
-            return -1;
-        }
+    public int getMinTemp(String piid) throws SQLException {
+        return dao.getMinTemp(piid);
     }
 
     public OperationResult<Fishes> putFishes(Fishes fishes) {

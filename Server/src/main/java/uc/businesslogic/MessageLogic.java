@@ -26,9 +26,12 @@ public class MessageLogic extends LogicBase {
         Configurations configurations = configLogic.getConfigurations(paramPushConfiguration.getPiId()).getResult();
 
         try {
+            int minWaterTemp = fishesLogic.getMinTemp(paramPushConfiguration.getPiId());
+            int maxWaterTemp = fishesLogic.getMaxTemp(paramPushConfiguration.getPiId());
+
             System.out.println("CONFIG MIN WATER TEMP - " + configurations.getMinWaterTemperature());
-            System.out.println("MIN WATER TEMP - " + fishesLogic.getMinTemp(paramPushConfiguration.getPiId()));
-            if(configurations.getMinWaterTemperature() < fishesLogic.getMinTemp(paramPushConfiguration.getPiId()))
+            System.out.println("MIN WATER TEMP - " + minWaterTemp);
+            if(configurations.getMinWaterTemperature() < minWaterTemp)
             {
                 Message msg = new Message();
                 msg.setMessagetype(MessagetypeEnum.WARNING);
@@ -37,8 +40,8 @@ public class MessageLogic extends LogicBase {
             }
 
             System.out.println("CONFIG MAX WATER TEMP - " + configurations.getMaxWaterTemperature());
-            System.out.println("MAX WATER TEMP - " + fishesLogic.getMaxTemp(paramPushConfiguration.getPiId()));
-            if(configurations.getMaxWaterTemperature() > fishesLogic.getMaxTemp(paramPushConfiguration.getPiId()))
+            System.out.println("MAX WATER TEMP - " + maxWaterTemp);
+            if(configurations.getMaxWaterTemperature() > maxWaterTemp)
             {
                 Message msg = new Message();
                 msg.setMessagetype(MessagetypeEnum.WARNING);
