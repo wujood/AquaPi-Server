@@ -15,7 +15,6 @@ public class Configurations {
     public String getPiId() {
         return piId;
     }
-
     public void setPiId(String piId) {
         this.piId = piId;
     }
@@ -23,7 +22,6 @@ public class Configurations {
     public float getMinAirTemperature() {
         return minAirTemperature;
     }
-
     public void setMinAirTemperature(float minAirTemperature) {
         this.minAirTemperature = minAirTemperature;
     }
@@ -31,7 +29,6 @@ public class Configurations {
     public float getMaxAirTemperature() {
         return maxAirTemperature;
     }
-
     public void setMaxAirTemperature(float maxAirTemperature) {
         this.maxAirTemperature = maxAirTemperature;
     }
@@ -39,7 +36,6 @@ public class Configurations {
     public float getMinWaterTemperature() {
         return minWaterTemperature;
     }
-
     public void setMinWaterTemperature(float minWaterTemperature) {
         this.minWaterTemperature = minWaterTemperature;
     }
@@ -47,7 +43,6 @@ public class Configurations {
     public float getMaxWaterTemperature() {
         return maxWaterTemperature;
     }
-
     public void setMaxWaterTemperature(float maxWaterTemperature) {
         this.maxWaterTemperature = maxWaterTemperature;
     }
@@ -55,7 +50,6 @@ public class Configurations {
     public float getBrightnessTreshhold() {
         return brightnessTreshhold;
     }
-
     public void setBrightnessTreshhold(float brightnessTreshhold) {
         this.brightnessTreshhold = brightnessTreshhold;
     }
@@ -63,7 +57,6 @@ public class Configurations {
     public float getFeederFrequency() {
         return feederFrequency;
     }
-
     public void setFeederFrequency(float feederFrequency) {
         this.feederFrequency = feederFrequency;
     }
@@ -71,18 +64,12 @@ public class Configurations {
     public float getWaterFlowSensitivity() {
         return waterFlowSensitivity;
     }
-
-    public void setWaterFlowSensitivity(float waterFlowSensitivity) {
-        this.waterFlowSensitivity = waterFlowSensitivity;
-    }
+    public void setWaterFlowSensitivity(float waterFlowSensitivity) { this.waterFlowSensitivity = waterFlowSensitivity; }
 
     public int getTogglePushNotifications() {
         return togglePushNotifications;
     }
-
-    public void setTogglePushNotifications(int togglePushNotifications) {
-        this.togglePushNotifications = togglePushNotifications;
-    }
+    public void setTogglePushNotifications(int togglePushNotifications) { this.togglePushNotifications = togglePushNotifications; }
 
     public Configurations() {
     }

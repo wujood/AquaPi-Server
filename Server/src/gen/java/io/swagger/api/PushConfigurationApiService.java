@@ -16,7 +16,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-02T22:14:25.781Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
 public abstract class PushConfigurationApiService {
     public abstract Response postPushConfiguration(ParamPushConfiguration request,SecurityContext securityContext) throws NotFoundException;
     public abstract Response putPushConfiguration(PushConfiguration request,SecurityContext securityContext) throws NotFoundException;

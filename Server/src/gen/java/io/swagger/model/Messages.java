@@ -18,33 +18,44 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.model.MessagesMessages;
+import java.util.ArrayList;
+import java.util.List;
 import javax.validation.constraints.*;
 
 /**
- * ParamPushConfiguration
+ * Messages
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
-public class ParamPushConfiguration   {
-  @JsonProperty("piid")
-  private String piid = null;
+public class Messages   {
+  @JsonProperty("messages")
+  private List<MessagesMessages> messages = null;
 
-  public ParamPushConfiguration piid(String piid) {
-    this.piid = piid;
+  public Messages messages(List<MessagesMessages> messages) {
+    this.messages = messages;
+    return this;
+  }
+
+  public Messages addMessagesItem(MessagesMessages messagesItem) {
+    if (this.messages == null) {
+      this.messages = new ArrayList<MessagesMessages>();
+    }
+    this.messages.add(messagesItem);
     return this;
   }
 
   /**
-   * Get piid
-   * @return piid
+   * Get messages
+   * @return messages
    **/
-  @JsonProperty("piid")
+  @JsonProperty("messages")
   @ApiModelProperty(value = "")
-  public String getPiid() {
-    return piid;
+  public List<MessagesMessages> getMessages() {
+    return messages;
   }
 
-  public void setPiid(String piid) {
-    this.piid = piid;
+  public void setMessages(List<MessagesMessages> messages) {
+    this.messages = messages;
   }
 
 
@@ -56,22 +67,22 @@ public class ParamPushConfiguration   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ParamPushConfiguration paramPushConfiguration = (ParamPushConfiguration) o;
-    return Objects.equals(this.piid, paramPushConfiguration.piid);
+    Messages messages = (Messages) o;
+    return Objects.equals(this.messages, messages.messages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(piid);
+    return Objects.hash(messages);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ParamPushConfiguration {\n");
+    sb.append("class Messages {\n");
     
-    sb.append("    piid: ").append(toIndentedString(piid)).append("\n");
+    sb.append("    messages: ").append(toIndentedString(messages)).append("\n");
     sb.append("}");
     return sb.toString();
   }

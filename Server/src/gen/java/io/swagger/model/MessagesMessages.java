@@ -16,41 +16,77 @@ package io.swagger.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 
 /**
- * Lamp
+ * MessagesMessages
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
-public class Lamp   {
-  @JsonProperty("value")
-  private Float value = null;
+public class MessagesMessages   {
+  /**
+   * Gets or Sets type
+   */
+  public enum TypeEnum {
+    ERROR("error"),
+    
+    WARNING("warning"),
+    
+    INFO("info"),
+    
+    SUGGESTION("suggestion");
+
+    private String value;
+
+    TypeEnum(String value) {
+      this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static TypeEnum fromValue(String text) {
+      for (TypeEnum b : TypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("type")
+  private TypeEnum type = null;
 
   @JsonProperty("message")
   private String message = null;
 
-  public Lamp value(Float value) {
-    this.value = value;
+  public MessagesMessages type(TypeEnum type) {
+    this.type = type;
     return this;
   }
 
   /**
-   * Get value
-   * @return value
+   * Get type
+   * @return type
    **/
-  @JsonProperty("value")
-  @ApiModelProperty(example = "0.5", value = "")
-  public Float getValue() {
-    return value;
+  @JsonProperty("type")
+  @ApiModelProperty(value = "")
+  public TypeEnum getType() {
+    return type;
   }
 
-  public void setValue(Float value) {
-    this.value = value;
+  public void setType(TypeEnum type) {
+    this.type = type;
   }
 
-  public Lamp message(String message) {
+  public MessagesMessages message(String message) {
     this.message = message;
     return this;
   }
@@ -60,7 +96,7 @@ public class Lamp   {
    * @return message
    **/
   @JsonProperty("message")
-  @ApiModelProperty(example = "everything is fine", value = "")
+  @ApiModelProperty(example = "There could be sharks!", value = "")
   public String getMessage() {
     return message;
   }
@@ -78,23 +114,23 @@ public class Lamp   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Lamp lamp = (Lamp) o;
-    return Objects.equals(this.value, lamp.value) &&
-        Objects.equals(this.message, lamp.message);
+    MessagesMessages messagesMessages = (MessagesMessages) o;
+    return Objects.equals(this.type, messagesMessages.type) &&
+        Objects.equals(this.message, messagesMessages.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, message);
+    return Objects.hash(type, message);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Lamp {\n");
+    sb.append("class MessagesMessages {\n");
     
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();

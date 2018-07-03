@@ -31,12 +31,12 @@ public class PushConfigurationApiServiceImpl extends PushConfigurationApiService
 
     @Override
     public Response postPushConfiguration(ParamPushConfiguration request, SecurityContext securityContext) throws NotFoundException {
-        OperationResult<List<uc.entities.Configurations>> bllResult = configurationsLogic.getConfigurations(uc.entities.ParamConfigurations.fromSwaggerObject(request).getPiId());
+        OperationResult<uc.entities.Configurations> bllResult = configurationsLogic.getConfigurations(uc.entities.ParamConfigurations.fromSwaggerObject(request).getPiId());
 
         if (!bllResult.isSucceeded())
             return Response.serverError().entity(new ApiResponseMessage(ApiResponseMessage.ERROR, bllResult.getMessage())).build();
 
-        return Response.ok().entity(mapEntitiesToSwaggerObject(bllResult.getResult())).build();
+        return Response.ok().entity(bllResult.getResult().toSwaggerObject()).build();
 
         // do some magic!
         //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();

@@ -4,11 +4,26 @@ import uc.entities.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
 
 public class ConfigurationsDAO extends DAOBase {
 
-    public List<Configurations> getConfigurations(String piid) throws SQLException {
+    public static HashMap<String, Configurations> configMap;
+    
+    public ConfigurationsDAO() throws SQLException {
+        if(ConfigurationsDAO.configMap != null)
+            return;
+        ConfigurationsDAO.configMap = new HashMap<>();
+        List<Configurations> loadedConfig = getConfigurations("", "");
+        for (Configurations config :
+                loadedConfig) {
+            ConfigurationsDAO.configMap.put(config.getPiId(), config);
+        }
+    }
+
+    private List<Configurations> getConfigurations(String piid, String whereClause) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -17,8 +32,9 @@ public class ConfigurationsDAO extends DAOBase {
         try {
             connection = getConnection();
 
-            statement = connection.prepareStatement("SELECT * FROM CONFIGURATIONS WHERE PI_ID = ?");
-            statement.setString(1, piid);
+            statement = connection.prepareStatement("SELECT * FROM CONFIGURATIONS " + whereClause);
+            if(whereClause.contains("?"))
+                statement.setString(1, piid);
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -47,6 +63,10 @@ public class ConfigurationsDAO extends DAOBase {
         return results;
     }
 
+    public Configurations getConfigurations(String piid) throws SQLException {
+        return ConfigurationsDAO.configMap.get(piid);
+    }
+
     public Configurations putConfigurations(Configurations configurations) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
@@ -66,6 +86,8 @@ public class ConfigurationsDAO extends DAOBase {
             statement.setFloat(8, configurations.getWaterFlowSensitivity());
             statement.setInt(9, configurations.getTogglePushNotifications());
             statement.execute();
+
+            ConfigurationsDAO.configMap.replace(configurations.getPiId(), configurations);
 
             return configurations;
         } finally {

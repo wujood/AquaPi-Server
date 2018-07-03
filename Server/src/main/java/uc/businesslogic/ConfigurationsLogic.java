@@ -11,11 +11,15 @@ public class ConfigurationsLogic extends LogicBase {
     private ConfigurationsDAO dao;
 
     public ConfigurationsLogic() {
-        dao = new ConfigurationsDAO();
+        try{
+            dao = new ConfigurationsDAO();
+        } catch (Exception ex) {
+            handleException(new OperationResult<Configurations>(), ex);
+        }
     }
 
-    public OperationResult<List<Configurations>> getConfigurations(String piid) {
-        OperationResult<List<Configurations>> result = new OperationResult<>();
+    public OperationResult<Configurations> getConfigurations(String piid) {
+        OperationResult<Configurations> result = new OperationResult<>();
 
         try {
             result.setResult(dao.getConfigurations(piid));
