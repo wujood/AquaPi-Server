@@ -132,7 +132,7 @@ public class ComponentSettingsDAO extends DAOBase {
 
             System.out.println("PUT:");
             System.out.println("WAITING " + (isWaiting ? "TRUE" : "FALSE"));
-            if(isWaiting = false && componentSettings.getFeeder().getValue() == 1)
+            if(isWaiting == false && componentSettings.getFeeder().getValue() == 1)
             {
                 System.out.println("WAITING SET TO TRUE");
                 isWaiting = true;
