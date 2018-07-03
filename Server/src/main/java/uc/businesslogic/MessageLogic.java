@@ -29,8 +29,6 @@ public class MessageLogic extends LogicBase {
             int minWaterTemp = fishesLogic.getMinTemp(paramPushConfiguration.getPiId());
             int maxWaterTemp = fishesLogic.getMaxTemp(paramPushConfiguration.getPiId());
 
-            System.out.println("CONFIG MIN WATER TEMP - " + configurations.getMinWaterTemperature());
-            System.out.println("MIN WATER TEMP - " + minWaterTemp);
             if(configurations.getMinWaterTemperature() < minWaterTemp)
             {
                 Message msg = new Message();
@@ -39,8 +37,6 @@ public class MessageLogic extends LogicBase {
                 messages.add(msg);
             }
 
-            System.out.println("CONFIG MAX WATER TEMP - " + configurations.getMaxWaterTemperature());
-            System.out.println("MAX WATER TEMP - " + maxWaterTemp);
             if(configurations.getMaxWaterTemperature() > maxWaterTemp)
             {
                 Message msg = new Message();

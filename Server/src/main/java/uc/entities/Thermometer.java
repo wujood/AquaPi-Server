@@ -28,7 +28,7 @@ public class Thermometer {
     {
         Thermometer result = new Thermometer();
         // umrechnen in °C
-        result.setValue(((swagThermometer.getValue() * 5.0f / 1024.0f) -0.5f)*100);
+        result.setValue(((swagThermometer.getValue() * 3.3f / 1024.0f) -0.5f)*100);
         result.setMessage(swagThermometer.getMessage());
         return result;
     }
