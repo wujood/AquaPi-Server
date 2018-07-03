@@ -27,7 +27,8 @@ public class Thermometer {
     public static Thermometer fromSwaggerObject(io.swagger.model.Thermometer swagThermometer)
     {
         Thermometer result = new Thermometer();
-        result.setValue(swagThermometer.getValue());
+        // umrechnen in °C
+        result.setValue(((swagThermometer.getValue() * 5.0f / 1024.0f) -0.5f)*100);
         result.setMessage(swagThermometer.getMessage());
         return result;
     }

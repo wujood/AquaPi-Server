@@ -35,7 +35,8 @@ public class WaterLevelSensor {
     public static WaterLevelSensor fromSwaggerObject(io.swagger.model.WaterLevelSensor swagWaterLevelSensor)
     {
         WaterLevelSensor result = new WaterLevelSensor();
-        result.setValue(swagWaterLevelSensor.getValue());
+        // % value
+        result.setValue(swagWaterLevelSensor.getValue() / 1023);
         result.setMessage(swagWaterLevelSensor.getMessage());
         return result;
     }

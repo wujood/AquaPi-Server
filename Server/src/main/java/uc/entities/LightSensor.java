@@ -35,7 +35,8 @@ public class LightSensor {
     public static LightSensor fromSwaggerObject(io.swagger.model.LightSensor swagLightSensor)
     {
         LightSensor result = new LightSensor();
-        result.setValue(swagLightSensor.getValue());
+        //
+        result.setValue((1023.0f - swagLightSensor.getValue())*10.0f/swagLightSensor.getValue());
         result.setMessage(swagLightSensor.getMessage());
         return result;
     }
