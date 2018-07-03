@@ -22,14 +22,14 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 
 /**
- * MessagesMessages
+ * Message
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
-public class MessagesMessages   {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T15:06:07.764Z")
+public class Message   {
   /**
-   * Gets or Sets type
+   * Gets or Sets messagetype
    */
-  public enum TypeEnum {
+  public enum MessagetypeEnum {
     ERROR("error"),
     
     WARNING("warning"),
@@ -40,7 +40,7 @@ public class MessagesMessages   {
 
     private String value;
 
-    TypeEnum(String value) {
+    MessagetypeEnum(String value) {
       this.value = value;
     }
 
@@ -51,8 +51,8 @@ public class MessagesMessages   {
     }
 
     @JsonCreator
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
+    public static MessagetypeEnum fromValue(String text) {
+      for (MessagetypeEnum b : MessagetypeEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -61,48 +61,48 @@ public class MessagesMessages   {
     }
   }
 
-  @JsonProperty("type")
-  private TypeEnum type = null;
+  @JsonProperty("messagetype")
+  private MessagetypeEnum messagetype = null;
 
-  @JsonProperty("message")
-  private String message = null;
+  @JsonProperty("text")
+  private String text = null;
 
-  public MessagesMessages type(TypeEnum type) {
-    this.type = type;
+  public Message messagetype(MessagetypeEnum messagetype) {
+    this.messagetype = messagetype;
     return this;
   }
 
   /**
-   * Get type
-   * @return type
+   * Get messagetype
+   * @return messagetype
    **/
-  @JsonProperty("type")
+  @JsonProperty("messagetype")
   @ApiModelProperty(value = "")
-  public TypeEnum getType() {
-    return type;
+  public MessagetypeEnum getMessagetype() {
+    return messagetype;
   }
 
-  public void setType(TypeEnum type) {
-    this.type = type;
+  public void setMessagetype(MessagetypeEnum messagetype) {
+    this.messagetype = messagetype;
   }
 
-  public MessagesMessages message(String message) {
-    this.message = message;
+  public Message text(String text) {
+    this.text = text;
     return this;
   }
 
   /**
-   * Get message
-   * @return message
+   * Get text
+   * @return text
    **/
-  @JsonProperty("message")
+  @JsonProperty("text")
   @ApiModelProperty(example = "There could be sharks!", value = "")
-  public String getMessage() {
-    return message;
+  public String getText() {
+    return text;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setText(String text) {
+    this.text = text;
   }
 
 
@@ -114,24 +114,24 @@ public class MessagesMessages   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MessagesMessages messagesMessages = (MessagesMessages) o;
-    return Objects.equals(this.type, messagesMessages.type) &&
-        Objects.equals(this.message, messagesMessages.message);
+    Message message = (Message) o;
+    return Objects.equals(this.messagetype, message.messagetype) &&
+        Objects.equals(this.text, message.text);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, message);
+    return Objects.hash(messagetype, text);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MessagesMessages {\n");
+    sb.append("class Message {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    messagetype: ").append(toIndentedString(messagetype)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("}");
     return sb.toString();
   }

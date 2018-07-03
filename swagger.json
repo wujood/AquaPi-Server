@@ -227,7 +227,10 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "$ref": "#/definitions/Messages"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
             }
           }
         }
@@ -585,24 +588,16 @@
         }
       }
     },
-    "Messages": {
+    "Message": {
       "type": "object",
       "properties": {
-        "messages": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": ["error", "warning", "info", "suggestion"]
-              },
-              "message": {
-                "type": "string",
-                "example": "There could be sharks!"
-              }
-            }
-          }
+        "messagetype": {
+          "type": "string",
+          "enum": ["error", "warning", "info", "suggestion"]
+        },
+        "text": {
+          "type": "string",
+          "example": "There could be sharks!"
         }
       }
     }

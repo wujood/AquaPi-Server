@@ -16,7 +16,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T15:06:07.764Z")
 public abstract class FishesApiService {
     public abstract Response postFishes(ParamFishes request,SecurityContext securityContext) throws NotFoundException;
     public abstract Response putFishes(Fishes request,SecurityContext securityContext) throws NotFoundException;

@@ -33,6 +33,22 @@ public class FishesLogic extends LogicBase {
         return result;
     }
 
+    public int getMaxTemp(String piid) {
+        try{
+            return dao.getMaxTemp(piid);
+        } catch (Exception ex) {
+            return -1;
+        }
+    }
+
+    public int getMinTemp(String piid) {
+        try{
+            return dao.getMinTemp(piid);
+        } catch (Exception ex) {
+            return -1;
+        }
+    }
+
     public OperationResult<Fishes> putFishes(Fishes fishes) {
         OperationResult<Fishes> result = new OperationResult<>();
 

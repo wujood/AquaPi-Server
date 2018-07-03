@@ -7,7 +7,7 @@ import io.swagger.api.factories.MessagesApiServiceFactory;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import io.swagger.model.Messages;
+import io.swagger.model.Message;
 import io.swagger.model.ParamPushConfiguration;
 
 import java.util.Map;
@@ -30,7 +30,7 @@ import javax.validation.constraints.*;
 @Consumes({ "application/json" })
 @Produces({ "application/json" })
 @io.swagger.annotations.Api(description = "the Messages API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T15:06:07.764Z")
 public class MessagesApi  {
    private final MessagesApiService delegate;
 
@@ -59,9 +59,9 @@ public class MessagesApi  {
     
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Returns the current PushConfigurations", notes = "Returns the current PushConfiguration", response = Messages.class, tags={ "Post","PushConfiguration", })
+    @io.swagger.annotations.ApiOperation(value = "Returns the current PushConfigurations", notes = "Returns the current PushConfiguration", response = Message.class, responseContainer = "List", tags={ "Post","PushConfiguration", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Messages.class) })
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Message.class, responseContainer = "List") })
     public Response postMessages(@ApiParam(value = "The piid that you are interested in" ,required=true) ParamPushConfiguration request
 ,@Context SecurityContext securityContext)
     throws NotFoundException {

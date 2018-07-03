@@ -23,7 +23,7 @@ import javax.validation.constraints.*;
 /**
  * Thermometer
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T14:14:41.367Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2018-07-03T15:06:07.764Z")
 public class Thermometer   {
   @JsonProperty("value")
   private Float value = null;
