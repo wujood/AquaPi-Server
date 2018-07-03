@@ -73,7 +73,9 @@ public class ComponentSettingsDAO extends DAOBase {
                     airThermometer.setMessage("Warning! Air temperature is over 30°");
                 componentSetting.setAirThermometer(airThermometer);
                 // LAMP
-                lamp.setValue(resultSet.getFloat("LAMP"));
+                System.out.println("THRESHHOLD: " + config.getBrightnessTreshhold());
+                System.out.println("LIGHTSENSOR: " + resultSet.getFloat("LIGHTSENSOR"));
+                lamp.setValue(config.getBrightnessTreshhold() > resultSet.getFloat("LIGHTSENSOR") ? 1 : 0);
                 componentSetting.setLamp(lamp);
                 // FEEDER
                 System.out.println("POST FEEDER: " + (isWaiting ? 1 : 0));
