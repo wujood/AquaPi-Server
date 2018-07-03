@@ -94,6 +94,7 @@ public class FishesDAO extends DAOBase {
             statement = connection.prepareStatement("SELECT MIN(MAX_TEMP) MIN from (select PI.FISH_ID, PI.QUANTITY, ALL_FISHES.NAME, ALL_FISHES.MAX_TEMP from FISHES_IN_PI PI JOIN ALL_FISHES ON (PI.FISH_ID = ALL_FISHES.FISH_ID) WHERE PI.PI_ID = ? AND QUANTITY > 0) a");
             statement.setString(1, piid);
             resultSet = statement.executeQuery();
+            resultSet.next();
 
             return resultSet.getInt("MIN");
         } finally {
@@ -119,6 +120,7 @@ public class FishesDAO extends DAOBase {
             statement = connection.prepareStatement("SELECT MAX(MIN_TEMP) MAX from (select PI.FISH_ID, PI.QUANTITY, ALL_FISHES.NAME, ALL_FISHES.MIN_TEMP from FISHES_IN_PI PI JOIN ALL_FISHES ON (PI.FISH_ID = ALL_FISHES.FISH_ID) WHERE PI.PI_ID = ? AND QUANTITY > 0) a");
             statement.setString(1, piid);
             resultSet = statement.executeQuery();
+            resultSet.next();
 
             return resultSet.getInt("MAX");
         } finally {
