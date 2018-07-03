@@ -36,7 +36,7 @@ public class LightSensor {
     {
         LightSensor result = new LightSensor();
         //
-        result.setValue((1023.0f - swagLightSensor.getValue())*10.0f/swagLightSensor.getValue());
+        result.setValue(swagLightSensor.getValue());
         result.setMessage(swagLightSensor.getMessage());
         return result;
     }
