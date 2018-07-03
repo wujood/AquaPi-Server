@@ -203,6 +203,36 @@
         }
       }
     },
+    "/Messages": {
+      "post": {
+        "tags": [ "Post", "PushConfiguration" ],
+        "summary": "Returns the current PushConfigurations",
+        "description": "Returns the current PushConfiguration",
+        "operationId": "postMessages",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "description": "The piid that you are interested in",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ParamPushConfiguration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Messages"
+            }
+          }
+        }
+      }
+    },
     "/PushConfiguration": {
       "post": {
         "tags": [ "Post", "PushConfiguration" ],
@@ -552,6 +582,27 @@
       "properties": {
         "piid": {
           "type": "string"
+        }
+      }
+    },
+    "Messages": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["error", "warning", "info", "suggestion"]
+              },
+              "message": {
+                "type": "string",
+                "example": "There could be sharks!"
+              }
+            }
+          }
         }
       }
     }
