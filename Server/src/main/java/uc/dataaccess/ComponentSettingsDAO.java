@@ -21,6 +21,7 @@ public class ComponentSettingsDAO extends DAOBase {
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List<ComponentSettings> result = new ArrayList<>();
+        Configurations config = ConfigurationsDAO.configMap.get(piid);
 
         try {
             connection = getConnection();
@@ -58,8 +59,10 @@ public class ComponentSettingsDAO extends DAOBase {
                 componentSetting.setWaterLevelSensor(waterLevelSensor);
                 // WATER THERMOMETER
                 waterThermometer.setValue(resultSet.getFloat("WATER_THERMOMETER"));
-                if(waterThermometer.getValue() > 30)
-                    waterThermometer.setMessage("Warning! Water temperature is over 30°");
+                if(waterThermometer.getValue() > config.getMaxWaterTemperature())
+                    waterThermometer.setMessage("Warning! Water temperature is over your configured maximal value");
+                else if (waterThermometer.getValue() < config.getMinWaterTemperature())
+                    waterThermometer.setMessage("Warning! Water temperature is below your configured minimal value");
                 componentSetting.setWaterThermometer(waterThermometer);
                 // AIR THERMOMETER
                 airThermometer.setValue(resultSet.getFloat("AIR_THERMOMETER"));
